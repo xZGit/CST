@@ -8,6 +8,12 @@ var base = {
   app: {
     root: path.normalize(path.join(__dirname, "/..")),
     env: env,
+    //wechat info
+    appId: "wx2f68ab46f5e15276",
+    appsecret:"90b38462d0eeed767d80d962250b8f69",
+    redirectUrl:"",
+    scope:"snsapi_userinfo",
+    state:""
   },
 };
 

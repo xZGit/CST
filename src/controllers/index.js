@@ -5,24 +5,23 @@
 
 "use strict";
 
+var OAuth = require('wechat-oauth');
+var config = require('../../config/config');
+var client = new OAuth(config.app.appId, config.app.appsecret);
+
+
+var url = client.getAuthorizeURL(config.app.redirectUrl, config.app.state, config.app.scope);
+
+
+
 var Controllers = {
     };
 
 
 Controllers.index = function *() {
-    this.body = yield this.render("basic", {
-        version: "33",
-        commit: "33",
-        STYLE_URL: "33",
-        SCRIPT_URL:"33"
-    });
+
+    this.redirect(url);
 };
-
-
-
-
-
-
 
 
 module.exports=Controllers;
