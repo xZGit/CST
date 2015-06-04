@@ -12,4 +12,5 @@ module.exports = function (app) {
 
   app.get("/", controller.index);
 
+  app.get("/home", controller.home);
 };

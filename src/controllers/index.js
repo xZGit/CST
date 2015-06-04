@@ -24,4 +24,17 @@ Controllers.index = function *() {
 };
 
 
+var a=0;
+Controllers.home = function *() {
+    var session = this.session;
+    if(!session.count) session.count=a++;
+    this.body = yield this.render("basic", {count:session.count});
+};
+
+
+
+
+
+
+
 module.exports=Controllers;

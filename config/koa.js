@@ -28,7 +28,7 @@ module.exports = function (app, config) {
 
   app.use(session({
     key: " cst.sid",
-    store: new MongoStore({ url: config.mongo.url }),
+    store: new MongoStore({ url: config.mongo.url ,ttl: 60 * 60 * 1 * 1000}),
   }));
 
   app.use(bodyParser());
