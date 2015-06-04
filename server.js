@@ -8,7 +8,7 @@ var koa = require("koa");
 /**
  * Config
  */
-var config = require("./config/config");
+var config = require("./conf/config");
 
 
 /**
@@ -18,10 +18,10 @@ var app = module.exports = koa();
 
 require("./src/models")(config);
 
-require("./config/koa")(app, config);
+require("./src/koa")(app, config);
 
 // Routes
-require("./config/routes")(app);
+require("./src/routes")(app);
 
 
 // Start app

@@ -6,7 +6,7 @@
 "use strict";
 
 var OAuth = require('wechat-oauth');
-var config = require('../../config/config');
+var config = require('../../conf/config');
 var client = new OAuth(config.app.appId, config.app.appsecret);
 
 

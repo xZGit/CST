@@ -14,7 +14,7 @@ var STATIC_FILES_MAP = {};
 var SERVE_OPTIONS = { maxAge: 365 * 24 * 60 * 60 };
 
 module.exports = function (app, config) {
-  if (!config.app.keys) { throw new Error("Please add session secret key in the config file!"); }
+  if (!config.app.keys) { throw new Error("Please add session secret key in the conf file!"); }
   app.keys = config.app.keys;
 
   if (config.app.env !== "test") {
