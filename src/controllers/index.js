@@ -13,9 +13,7 @@ var client = new OAuth(config.app.appId, config.app.appsecret);
 var url = client.getAuthorizeURL(config.app.redirectUrl, config.app.state, config.app.scope);
 
 
-
-var Controllers = {
-    };
+var Controllers = {};
 
 
 Controllers.index = function *() {
@@ -24,17 +22,12 @@ Controllers.index = function *() {
 };
 
 
-var a=0;
+var a = 0;
 Controllers.home = function *() {
     var session = this.session;
-    if(!session.count) session.count=a++;
-    this.body = yield this.render("basic", {count:session.count});
+    if (!session.count) session.count = a++;
+    this.body = yield this.render(0, {count: session.count}, "basic");
 };
 
 
-
-
-
-
-
-module.exports=Controllers;
+module.exports = Controllers;

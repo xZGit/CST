@@ -5,7 +5,6 @@ var session = require("koa-generic-session");
 var MongoStore = require("koa-sess-mongo-store");
 var responseTime = require("koa-response-time");
 var logger = require("koa-logger");
-var views = require("co-views");
 var compress = require("koa-compress");
 var errorHandler = require("koa-error");
 var bodyParser = require("koa-bodyparser");
@@ -21,8 +20,6 @@ module.exports = function (app, config) {
     app.use(logger());
   }
 
-  app.use(errorHandler());
-
   app.use(serve(path.join(config.app.root, 'public'), SERVE_OPTIONS, STATIC_FILES_MAP));
 
 
@@ -32,16 +29,7 @@ module.exports = function (app, config) {
   }));
 
   app.use(bodyParser());
-
-
-  app.use(function *(next) {
-    this.render = views(config.app.root + "/src/views", {
-      map: { html: "swig" },
-      cache : config.app.env === "development" ? "memory" : false,
-    });
-    yield next;
-  });
-
   app.use(compress());
   app.use(responseTime());
+
 };

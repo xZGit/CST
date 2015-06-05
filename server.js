@@ -20,6 +20,7 @@ require("./src/models")(config);
 
 require("./src/koa")(app, config);
 
+require("./src/response")(app, config);
 // Routes
 require("./src/routes")(app);
 
