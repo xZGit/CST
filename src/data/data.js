@@ -6,7 +6,7 @@
 
 (function (module) {
 
-    module.categories = [
+    module.results = [
         {id: 1, name: "文艺", description: "", score: 109},
         {id: 2, name: "二", description: "", score: 110},
         {id: 3, name: "高逼格", description: "", score: 106},

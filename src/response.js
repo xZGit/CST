@@ -40,6 +40,10 @@ module.exports = function (app, config) {
                 return yield this.processRender(template, code == 0 ? data : result);
             };
 
+            this.throwCode = function *(code, data) {
+                this.body = yield this.render(code, data);
+            };
+
             try {
                 yield next;
                 if (404 == this.response.status && !this.response.body) this.throw(404);

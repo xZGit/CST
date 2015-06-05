@@ -16,6 +16,12 @@ module.exports = function (app) {
   app.get("/home", controller.home);
 
 
+  app.get("/category/:category", controller.getCategory);
+
+
+  app.get("/getUserInfo", controller.getUserInfo);
+
+
 
 
 };

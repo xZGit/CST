@@ -6,7 +6,9 @@
 (function (module) {
 
 
-    module.codeMapMsg = {};
+    module.codeMapMsg = {
+        1000:"参数分类有误"
+    };
 
 
 }(exports));
