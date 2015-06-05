@@ -7,6 +7,7 @@
 
 var codeMapMsg = require('./err').codeMapMsg;
 var views = require("co-views");
+var logger = require('../logger').getLogger(module);
 
 /*
  * response middleware.
@@ -31,6 +32,7 @@ module.exports = function (app, config) {
                 if (code != 0) {
                     result.error = codeMapMsg[code] || "unrecongize error";
                     template = "error";
+                    logger.error(result.error);
                 }
                 if (this.isApi) {
                     return result;
@@ -45,6 +47,8 @@ module.exports = function (app, config) {
             } catch (err) {
 
                 this.status = err.status || 500;
+
+                logger.error(err.message, err.stack);
 
                 var template = "error";
                 //if(err.status==404) template="404";
