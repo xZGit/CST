@@ -16,7 +16,7 @@ var config = require("./conf/config");
  */
 var app = module.exports = koa();
 
-//require("./src/models")(config);
+require("./src/models")(config);
 
 require("./src/koa")(app, config);
 

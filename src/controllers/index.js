@@ -30,7 +30,7 @@ var a = 0;
 Controllers.home = function *() {
     var session = this.session;
     if (!session.count) session.count = a++;
-    this.body = yield this.render(0, {count: session.count}, "basic");
+    this.body = yield this.render({count: session.count}, "basic");
 };
 
 
@@ -62,10 +62,10 @@ Controllers.getUserInfo = function *(){
             client.getUser(results.getAccessToken.data.openid, callback);
         }]
     },function(err, results){
-      console.log(results);
-
+        //this.session
+        this.body=this.render({}, "basic");
     });
-    this.body=7;
+
 };
 
 

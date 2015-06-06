@@ -23,10 +23,10 @@ module.exports = function (app, config) {
   app.use(serve(path.join(config.app.root, 'public'), SERVE_OPTIONS, STATIC_FILES_MAP));
 
 
-  //app.use(session({
-  //  key: " cst.sid",
-  //  store: new MongoStore({ url: config.mongo.url ,ttl: 60 * 60 * 1 * 1000}),
-  //}));
+  app.use(session({
+    key: " cst.sid",
+    store: new MongoStore({ url: config.mongo.url ,ttl: 60 * 60 * 1 * 1000}),
+  }));
 
   app.use(bodyParser());
   app.use(compress());

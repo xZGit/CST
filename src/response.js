@@ -15,6 +15,7 @@ var logger = require('../logger').getLogger(module);
 
 module.exports = function (app, config) {
     // register functions
+    var errorTemplate = "error";
     app.use(
         function *result(next) {
 
@@ -27,11 +28,16 @@ module.exports = function (app, config) {
                 cache: config.app.env === "development" ? "memory" : false,
             });
             this.render = function *(code, data, template) {
+                if (typeof code != "number") {
+                    code = 0;
+                    data = code;
+                    template = data;
+                }
                 var result = {code: code};
                 if (data) result.data = data;
                 if (code != 0) {
                     result.error = codeMapMsg[code] || "unrecongize error";
-                    template = "error";
+                    template = errorTemplate;
                     logger.error(result.error);
                 }
                 if (this.isApi) {
@@ -54,7 +60,7 @@ module.exports = function (app, config) {
 
                 logger.error(err.message, err.stack);
 
-                var template = "error";
+                var template = errorTemplate;
                 //if(err.status==404) template="404";
                 // application
                 this.app.emit('error', err, this);
