@@ -62,8 +62,9 @@ Controllers.getUserInfo = function *(){
             client.getUser(results.getAccessToken.data.openid, callback);
         }]
     },function(err, results){
-        //this.session
-        this.body=this.render({}, "basic");
+        this.session.openid=results.getUserInfo.openid;
+        this.session.nickname=results.getUserInfo.nickname;
+        this.body=this.render({nickname:this.session.nickname, headimgurl: results.getUserInfo.headimgurl}, "basic");
     });
 
 };
