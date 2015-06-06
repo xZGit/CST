@@ -65,9 +65,9 @@ Controllers.getUserInfo = function *(){
 
         that.session.openid=results.getUserInfo.openid;
         that.session.nickname=results.getUserInfo.nickname;
-        that.body=that.render({nickname:that.session.nickname, headimgurl: results.getUserInfo.headimgurl}, "index");
-    });
 
+    });
+      that.body=that.render({}, "index");
 };
 
 
