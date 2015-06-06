@@ -30,8 +30,8 @@ module.exports = function (app, config) {
             this.render = function *(code, data, template) {
                 if (typeof code != "number") {
                     code = 0;
-                    data = code;
                     template = data;
+                    data = code;
                 }
                 var result = {code: code};
                 if (data) result.data = data;
