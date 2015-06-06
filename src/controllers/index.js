@@ -57,6 +57,7 @@ Controllers.setCategory = function *() {
 Controllers.getUserInfo = function *() {
     var param = querystring.parse(this.request.url.split('?')[1]);
     var accessReq = yield client.getAccessToken(param.code);
+    console.log(accessReq);
     var user = yield client.getUser(accessReq.data.openid);
     this.body = this.render(user, "index");
 };
