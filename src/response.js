@@ -29,9 +29,9 @@ module.exports = function (app, config) {
             });
             this.render = function *(code, data, template) {
                 if (typeof code != "number") {
-                    code = 0;
                     template = data;
                     data = code;
+                    code = 0;
                 }
                 var result = {code: code};
                 if (data) result.data = data;
@@ -43,6 +43,7 @@ module.exports = function (app, config) {
                 if (this.isApi) {
                     return result;
                 }
+                console.log(data);
                 return yield this.processRender(template, code == 0 ? data : result);
             };
 
