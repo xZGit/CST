@@ -53,7 +53,7 @@ Controllers.setCategory = function *(){
 
 Controllers.getUserInfo = function *(){
    var param= querystring.parse(this.request.url.split('?')[1]);
-   var session= this.session;
+   var that=this;
     async.auto({
         getAccessToken: function(callback){
             client.getAccessToken(param.code, callback);
@@ -62,9 +62,9 @@ Controllers.getUserInfo = function *(){
             client.getUser(results.getAccessToken.data.openid, callback);
         }]
     },function(err, results){
-        session.openid=results.getUserInfo.openid;
-        session.nickname=results.getUserInfo.nickname;
-        this.body=this.render({nickname:session.nickname, headimgurl: results.getUserInfo.headimgurl}, "basic");
+        that.session.openid=results.getUserInfo.openid;
+        that.session.nickname=results.getUserInfo.nickname;
+        that.body=that.render({nickname:session.nickname, headimgurl: results.getUserInfo.headimgurl}, "index");
     });
 
 };
