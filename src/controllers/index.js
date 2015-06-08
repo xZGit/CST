@@ -11,6 +11,7 @@ var OAuth = require('../../lib/wechatOauth');
 var config = require('../../conf/config');
 var client = new OAuth(config.app.appId, config.app.appsecret);
 var categories = require('../data/data').category;
+var results = require('../data/data').results;
 var categoryNames = _.keys(categories);
 
 
@@ -63,10 +64,10 @@ Controllers.setCategory = function *() {
 
 
 Controllers.getUserInfo = function *() {
-    //var param = querystring.parse(this.request.url.split('?')[1]);
-    //var accessReq = yield client.getAccessToken(param.code);
-    //var user = yield client.getUser(accessReq.data.openid);
-    var user = {data: {openid: 123, nickname: "xx"}};
+    var param = querystring.parse(this.request.url.split('?')[1]);
+    var accessReq = yield client.getAccessToken(param.code);
+    var user = yield client.getUser(accessReq.data.openid);
+    //var user = {data: {openid: 123, nickname: "xx"}};
     this.session.openid = user.data.openid;
     this.session.nickname = user.data.nickname;
     this.body = yield this.render(user.data, "index");
@@ -74,8 +75,67 @@ Controllers.getUserInfo = function *() {
 
 
 function *generateResult(that) {
+    var items = that.session.items;
+    var openid = that.session.openid;
+    var nickname = that.session.nickname;
+    //var items = {apps: [1, 15, 3], movies: [2, 15, 8]};
 
-    return that.body = 66667777;
+    //cacluate the result
+    var result = {};
+    _.forEach(items, function (v, k) {
+        _(v).forEach(function (n) {
+            var resultMaps = categories[k][n - 1]["results"];
+            _(resultMaps).forEach(function (r) {
+                result[r.id] = result[r.id] ? result[r.id] + r.score : r.score;
+            }).value();
+        }).value();
+    });
+
+    var lastResult=[];
+    var currentLowestRate = 0;
+    var currentHighestRate = 0;
+    _.forEach(result, function (v, k){
+        var rate = v/results[k].score;
+        if(rate > config.app.rate){
+            if(lastResult.length < 2){
+                lastResult.push(results[k]);
+                if(lastResult.length==0) {
+                    currentHighestRate=currentLowestRate=rate;
+                }else{
+                    if(rate>currentHighestRate) {
+                        currentHighestRate=rate;
+                        lastResult.reverse();
+                    }else{
+                        currentLowestRate=rate;
+                    }
+                }
+            }
+            if(lastResult.length==2){
+                if(rate>currentHighestRate) {
+                    currentLowestRate=currentHighestRate;
+                    currentHighestRate=rate;
+                    lastResult.pop();
+                    lastResult.unshift(results[k]);
+
+                }else if(rate< currentHighestRate && rate>currentLowestRate){
+                    currentLowestRate=rate;
+                    lastResult.pop();
+                    lastResult.push(results[k]);
+                }
+            }
+        }
+    });
+    console.log(lastResult);
+    if(lastResult.length==0){
+
+    }
+
+
+    return that.body = lastResult;
 };
+
+
+
+
 
 module.exports = Controllers;
