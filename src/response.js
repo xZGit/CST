@@ -43,7 +43,6 @@ module.exports = function (app, config) {
                 if (this.isApi) {
                     return result;
                 }
-                console.log(data);
                 return yield this.processRender(template, code == 0 ? data : result);
             };
 

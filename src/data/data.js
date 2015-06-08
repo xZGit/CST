@@ -17,8 +17,9 @@
         {id: 8, name: "高智商", description: "", score: 101},
     ];
 
+    module.category={};
 
-    module.apps = [
+    module.category.apps = [
         {id: 1, name: "豆瓣FM", imageUrl: "", category: [{id: 1, score: 8}]},
         {id: 2, name: "ONE", imageUrl: "", category: [{id: 1, score: 9}]},
         {id: 3, name: "特逗", imageUrl: "", category: [{id: 2, score: 9}]},
@@ -42,7 +43,7 @@
     ];
 
 
-    module.movies = [
+    module.category.movies = [
         {id: 1, name: "重庆森林", imageUrl: "", category: [{id: 1, score: 10}]},
         {id: 2, name: "海上钢琴师", imageUrl: "", category: [{id: 1, score: 7}]},
         {id: 3, name: "万万没想到", imageUrl: "", category: [{id: 2, score: 8}]},
@@ -65,7 +66,7 @@
         {id: 20, name: "千与千寻", imageUrl: "", category: [{id: 7, score:6}, {id: 1, score: 4}]},
     ];
 
-    module.stars = [
+    module.category.stars = [
         {id: 1, name: "苏打绿", imageUrl: "", category: [{id: 1, score: 8}]},
         {id: 2, name: "陈绮贞", imageUrl: "", category: [{id: 1, score: 9}]},
         {id: 3, name: "张全蛋", imageUrl: "", category: [{id: 2, score: 10}]},
