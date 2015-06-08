@@ -6,6 +6,8 @@
 "use strict";
 
 var querystring = require('querystring');
+var mongoose = require("mongoose");
+var Record = mongoose.model("Record");
 var _ = require('lodash');
 var OAuth = require('../../lib/wechatOauth');
 var config = require('../../conf/config');
@@ -79,7 +81,8 @@ function *generateResult(that) {
     var openid = that.session.openid;
     var nickname = that.session.nickname;
     //var items = {apps: [1, 15, 3], movies: [2, 15, 8]};
-
+    //var openid = "##$$$";
+    //var nickname = "xx";
     //cacluate the result
     var result = {};
     _.forEach(items, function (v, k) {
@@ -91,51 +94,53 @@ function *generateResult(that) {
         }).value();
     });
 
-    var lastResult=[];
+    var lastResult = [];
     var currentLowestRate = 0;
     var currentHighestRate = 0;
-    _.forEach(result, function (v, k){
-        var rate = v/results[k].score;
-        if(rate > config.app.rate){
-            if(lastResult.length < 2){
-                lastResult.push(results[k]);
-                if(lastResult.length==0) {
-                    currentHighestRate=currentLowestRate=rate;
-                }else{
-                    if(rate>currentHighestRate) {
-                        currentHighestRate=rate;
+    _.forEach(result, function (v, k) {
+        var rate = v / results[k].score;
+        if (rate > config.app.rate) {
+            if (lastResult.length < 2) {
+                lastResult.push(k);
+                if (lastResult.length == 0) {
+                    currentHighestRate = currentLowestRate = rate;
+                } else {
+                    if (rate > currentHighestRate) {
+                        currentHighestRate = rate;
                         lastResult.reverse();
-                    }else{
-                        currentLowestRate=rate;
+                    } else {
+                        currentLowestRate = rate;
                     }
                 }
             }
-            if(lastResult.length==2){
-                if(rate>currentHighestRate) {
-                    currentLowestRate=currentHighestRate;
-                    currentHighestRate=rate;
+            if (lastResult.length == 2) {
+                if (rate > currentHighestRate) {
+                    currentLowestRate = currentHighestRate;
+                    currentHighestRate = rate;
                     lastResult.pop();
-                    lastResult.unshift(results[k]);
+                    lastResult.unshift(k);
 
-                }else if(rate< currentHighestRate && rate>currentLowestRate){
-                    currentLowestRate=rate;
+                } else if (rate < currentHighestRate && rate > currentLowestRate) {
+                    currentLowestRate = rate;
                     lastResult.pop();
-                    lastResult.push(results[k]);
+                    lastResult.push(k);
                 }
             }
         }
     });
-    console.log(lastResult);
-    if(lastResult.length==0){
+    if (lastResult.length == 0) {
 
     }
+    var record = new Record();
+    record.openid = openid;
+    record.wechatName = nickname;
+    record.result = lastResult;
+    yield record.save();
 
+    var returnResult = [results[lastResult[0]], results[lastResult[1]]];
 
-    return that.body = lastResult;
+    return that.body = returnResult;
 };
-
-
-
 
 
 module.exports = Controllers;

@@ -12,10 +12,11 @@ var Schema = mongoose.Schema;
 var RecordSchema = new Schema({
     wechatId: { type: String },
     wechatName:{ type: String },
-    selectItems: { type: [String]},
     result: {type: [String]},
     updated: { type: Date, default: Date.now },
 });
+
+
 
 RecordSchema.pre("save", function (next) {
     this.updated = new Date();
