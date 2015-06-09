@@ -30,5 +30,5 @@ module.exports = function (app) {
 
     setUpPageRoute("post", "/setCategory", controller.setCategory);
 
-
+    setUpPageRoute("get", "/getResult/:id", controller.getResult);
 };

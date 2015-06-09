@@ -76,6 +76,20 @@ Controllers.getUserInfo = function *() {
 };
 
 
+Controllers.getResult = function *() {
+    var id = this.params.id;
+    var record = yield Record.findOne({_id: id}).exec();
+    if (!record || !record.result || _.size(record.result) == 0) return yield this.throwCode(1003);
+    var returnResult = [];
+
+    _(record.result).forEach(function (r) {
+        returnResult.push(results[r]);
+    }).value();
+
+    this.body = returnResult;
+};
+
+
 function *generateResult(that) {
     var items = that.session.items;
     var openid = that.session.openid;
@@ -135,11 +149,9 @@ function *generateResult(that) {
     record.openid = openid;
     record.wechatName = nickname;
     record.result = lastResult;
-    yield record.save();
-
-    var returnResult = [results[lastResult[0]], results[lastResult[1]]];
-
-    return that.body = returnResult;
+    var r = yield record.save();
+    delete this.session.items;
+    that.redirect("getResult/" + r._id);
 };
 
 
