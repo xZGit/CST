@@ -36,8 +36,13 @@ Controllers.home = function *() {
 
 
 Controllers.getCategory = function *() {
-    if (!categories[this.params.category])  return yield this.throwCode(1002, this.params.category);
-    this.body = {category: this.params.category, items: categories[this.params.category]};
+    if (!categories[this.params.category]) {
+        return yield this.throwCode(1002, this.params.category);
+    }
+    this.body = yield this.render({
+        category: this.params.category,
+        items: categories[this.params.category]
+    }, "category");
 };
 
 
@@ -48,17 +53,17 @@ Controllers.getCategory = function *() {
 Controllers.setCategory = function *() {
     var category = this.request.body.category, items = this.request.body.items;
     if (!categories[category]) return yield this.throwCode(1002, category);
-    if (_.size(_.uniq(items)) != 3) return yield this.throwCode(1002, items);
+    if (_.size(_.uniq(items)) != 3) return yield this.throwCode(1004, items);
 
     var errorItem = _.find(items, function (item) {
         return item > categories[category].length;
     });
     if (errorItem) return yield this.throwCode(1002, errorItem);
     this.session.items = this.session.items || {};
-    this.session.items[this.request.category] = this.request.items;
+    this.session.items[category] = items;
     var i = categoryNames.indexOf(category);
     if (i !== categoryNames.length - 1) {
-        return this.redirect("getCategory/" + categoryNames[i + 1]);
+      return this.body = yield this.render({nextCategoty:categoryNames[i + 1]});
     }
     return yield generateResult(this);
 };
@@ -150,8 +155,9 @@ function *generateResult(that) {
     record.wechatName = nickname;
     record.result = lastResult;
     var r = yield record.save();
-    delete this.session.items;
-    that.redirect("getResult/" + r._id);
+    delete that.session.items;
+    that.body = yield that.render({result:r._id});
+
 };
 
 

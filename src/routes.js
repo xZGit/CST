@@ -10,10 +10,10 @@ module.exports = function (app) {
     app.use(router(app));
 
 
-    function setUpPageRoute(method, url) {
-        var funcs = Array.prototype.slice.call(arguments, 2);
-        app[method].apply(app, [url].concat(funcs));
-        app[method].apply(app, ["/api" + url].concat(funcs))
+    function setUpPageRoute(url) {
+        var funcs = Array.prototype.slice.call(arguments, 1);
+        app.get.apply(app, [url].concat(funcs));
+        app.get.apply(app, ["/api" + url].concat(funcs))
     };
 
 
@@ -21,14 +21,13 @@ module.exports = function (app) {
 
     app.get("/home", controller.home);
 
-
     app.get("/getCategory/:category", controller.getCategory);
-
 
     app.get("/getUserInfo", controller.getUserInfo);
 
+    app.get("/getUserInfo", controller.getUserInfo);
 
-    setUpPageRoute("post", "/setCategory", controller.setCategory);
+    app.post("/api/setCategory", controller.setCategory);
 
-    setUpPageRoute("get", "/getResult/:id", controller.getResult);
+    setUpPageRoute("/getResult/:id", controller.getResult);
 };

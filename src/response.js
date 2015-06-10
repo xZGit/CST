@@ -25,7 +25,8 @@ module.exports = function (app, config) {
 
             this.processRender = views(config.app.root + "/src/views", {
                 map: {html: "swig"},
-                cache: config.app.env === "development" ? "memory" : false,
+                cache: config.app.env === "development" ? false: "memory" ,
+                locals: {}
             });
             this.render = function *(code, data, template) {
                 if (typeof code != "number") {
@@ -52,7 +53,10 @@ module.exports = function (app, config) {
 
             try {
                 yield next;
-                if (404 == this.response.status && !this.response.body) this.throw(404);
+                if (404 == this.response.status && !this.response.body) {
+                    logger.error("not found path %s", this.request.url);
+                    this.throw(404);
+                }
 
             } catch (err) {
 
@@ -63,7 +67,7 @@ module.exports = function (app, config) {
                 var template = errorTemplate;
                 //if(err.status==404) template="404";
                 // application
-                this.app.emit('error', err, this);
+                //this.app.emit('error', err, this);
 
                 var result = {code: err.code || this.status, error: err.message};
 

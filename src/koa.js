@@ -28,7 +28,7 @@ module.exports = function (app, config) {
 
     app.use(session({
         key: " cst.sid",
-        store: new MongoStore({db: db, ttl: 60 * 60 * 1 * 1000}),
+        store: new MongoStore({db: db, ttl: 60 * 60 * 1000}), //1小时过期
     }));
 
     app.use(bodyParser());
