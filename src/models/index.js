@@ -10,23 +10,23 @@ var logger = require("../../logger").getLogger(module);
 
 module.exports = function (config) {
 
-    mongoose.connect(config.mongo.url, function (err) {
+    var connection = mongoose.connect(config.mongo.url, function (err) {
         if (err) {
             console.error('connect to %s error: ', config.db, err.message);
             process.exit(1);
         }
-    });
+    }).connection;
 
-    mongoose.set('debug', function(collectionName, method, query, doc, options){
+    mongoose.set('debug', function (collectionName, method, query, doc, options) {
         logger.info('Mongodb %s.%s(%s) %s %s', collectionName, method, format(query), format(doc), format(options));
     });
 
-    var format = function format(obj){
-        if(!obj) return '';
+    var format = function format(obj) {
+        if (!obj) return '';
         return util.inspect(obj, false, 10, true).replace(/\n/g, '').replace(/\s{2,}/g, ' ');
     };
 // models
     require('./record');
-
+    return connection;
 };
 
