@@ -6,7 +6,6 @@ var MongoStore = require("koa-sess-mongo-store");
 var responseTime = require("koa-response-time");
 var logger = require("koa-logger");
 var compress = require("koa-compress");
-var errorHandler = require("koa-error");
 var bodyParser = require("koa-bodyparser");
 
 var STATIC_FILES_MAP = {};
