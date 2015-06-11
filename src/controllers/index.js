@@ -71,13 +71,13 @@ Controllers.setCategory = function *() {
 
 
 Controllers.getUserInfo = function *() {
-    var param = querystring.parse(this.request.url.split('?')[1]);
-    var accessReq = yield client.getAccessToken(param.code);
-    var user = yield client.getUser(accessReq.data.openid);
-    //var user = {data: {openid: 123, nickname: "xx"}};
+    //var param = querystring.parse(this.request.url.split('?')[1]);
+    //var accessReq = yield client.getAccessToken(param.code);
+    //var user = yield client.getUser(accessReq.data.openid);
+    var user = {data: {openid: 123, nickname: "xx"}};
     this.session.openid = user.data.openid;
     this.session.nickname = user.data.nickname;
-    this.body = yield this.render(user.data, "index");
+    this.body = yield this.render(user.data, "test-start");
 };
 
 

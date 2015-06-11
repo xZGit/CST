@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+         <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" name="viewport" id="viewport" />
+         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <link rel="stylesheet" href="http://127.0.0.1:3000/css/text-star-end.css">
+        <script type="text/javascript" src="http://127.0.0.1:3000/js/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="http://127.0.0.1:3000/js/jquery.pin.js"></script>
+        <title>让全世界认清你的真面目！</title>
+    </head>
+    <body>
+    	<div class="app">
+    		<div class="style">
+    			<p>选出你的APP Style</p>
+    			<ul class="pin">
+    				<li class="show">No.1</li>
+    				<li class="show">No.2</li>
+    				<li class="show">No.3</li>
+    			</ul>
+    		</div>
+    		<ul>
+    			<li><img src="http://127.0.0.1:3000/images/app_douban.jpg" height="148" width="148" alt=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;豆瓣</span></li>
+    			<li><img src="http://127.0.0.1:3000/images/app_baisi.jpg" height="148" width="148" alt=""><span>百思不得姐</span></li>
+    			<li><img src="http://127.0.0.1:3000/images/app_baozou.jpg" height="148" width="148" alt=""><span>&nbsp;&nbsp;暴走漫画</span></li>
+    			<li><img src="http://127.0.0.1:3000/images/app_doufu.jpg" height="148" width="148" alt=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;豆腐</span></li>
+    			<li><img src="http://127.0.0.1:3000/images/app_eleme.jpg" height="148" width="148" alt=""><span>&nbsp;&nbsp;&nbsp;&nbsp;饿了么</span></li>
+    			<li><img src="http://127.0.0.1:3000/images/app_framed.jpg" height="148" width="148" alt=""><span>&nbsp;&nbsp;FRAMED</span></li>
+    			<li><img src="http://127.0.0.1:3000/images/app_ins.jpg" height="148" width="148" alt=""><span>Instagram</span></li>
+    			<li><img src="http://127.0.0.1:3000/images/app_lofter.jpg" height="148" width="148" alt=""><span>&nbsp;&nbsp;LOFTER</span></li>
+    			<li><img src="http://127.0.0.1:3000/images/app_meipai.jpg" height="148" width="148" alt=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;美拍</span></li>
+    			<li><img src="http://127.0.0.1:3000/images/app_meitugif.jpg" height="148" width="148" alt=""><span>&nbsp;&nbsp;&nbsp;&nbsp;美图GIF</span></li>
+    			<li><img src="http://127.0.0.1:3000/images/app_meitutietie.jpg" height="148" width="148" alt=""><span>&nbsp;&nbsp;美图贴贴</span></li>
+    			<li><img src="http://127.0.0.1:3000/images/app_momo.jpg" height="148" width="148" alt=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;陌陌</span></li>
+    			<li><img src="http://127.0.0.1:3000/images/app_one.jpg" height="148" width="148" alt=""><span>&nbsp;&nbsp;&nbsp;&nbsp;ONE</span></li>
+    			<li><img src="http://127.0.0.1:3000/images/app_qiubai.jpg" height="148" width="148" alt=""><span>&nbsp;&nbsp;糗事百科</span></li>
+    			<li><img src="http://127.0.0.1:3000/images/app_tedou.jpg" height="148" width="148" alt=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;特逗</span></li>
+    			<li><img src="http://127.0.0.1:3000/images/app_theroom.jpg" height="148" width="148" alt=""><span>TheRoom</span></li>
+    			<li><img src="http://127.0.0.1:3000/images/app_xiaoxiaole.jpg" height="148" width="148" alt=""><span>开心消消乐</span></li>
+    			<li><img src="http://127.0.0.1:3000/images/app_yanwenzi.jpg" height="148" width="148" alt=""><span>&nbsp;&nbsp;&nbsp;&nbsp;颜文字</span></li>
+    			<li><img src="http://127.0.0.1:3000/images/app_youyaoqi.jpg" height="148" width="148" alt=""><span>&nbsp;&nbsp;&nbsp;&nbsp;有妖气</span></li>
+    			<li><img src="http://127.0.0.1:3000/images/app_mono.jpg" height="148" width="148" alt=""><span>&nbsp;&nbsp;&nbsp;MONO</span></li>
+    		</ul>
+    	</div>
+    	<div class="footer">
+    		<ul>
+    			<a href="test-start.html"><li class="qian"><!-- <img src="images/arrow_back.png" height="28" width="16" alt=""> -->返回</li></a>
+    			<a href="/testEnd"><li class="hou">下一题</li></a>
+    		</ul>
+    	</div>
+    	<script type="text/javascript">
+		$(".style").pin(
+			{
+      			containerSelector: ".app"
+			}
+		);
+
+		$(document).ready(function(){
+		  $("li").click(function(){
+		  $('.show').html($(this).html());
+		  });
+
+		});
+	</script>
+    </body>
+</html>

@@ -27,6 +27,18 @@ module.exports = function (app) {
 
     app.get("/getUserInfo", controller.getUserInfo);
 
+    app.get("/startTest",function *(){
+            this.body = yield this.render({}, "test-app");
+    }
+   );
+
+
+    app.get("/testEnd",function *(){
+            this.body = yield this.render({}, "test-end");
+        }
+    );
+
+
     app.post("/api/setCategory", controller.setCategory);
 
     setUpPageRoute("/getResult/:id", controller.getResult);
