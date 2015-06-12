@@ -42,7 +42,6 @@
         {id: 20, name: "开心消消乐", imageUrl: "", results: [{id: 8, score: 2}, {id: 6, score: 4}]},
     ];
 
-
     module.category.movies = [
         {id: 1, name: "重庆森林", imageUrl: "", results: [{id: 1, score: 10}]},
         {id: 2, name: "海上钢琴师", imageUrl: "", results: [{id: 1, score: 7}]},
@@ -87,6 +86,52 @@
         {id: 18, name: "jobs", imageUrl: "", results: [{id: 3, score: 5}, {id: 8, score: 5}]},
         {id: 19, name: "周星驰", imageUrl: "", results: [{id: 2, score: 5}, {id: 4, score: 4}]},
         {id: 20, name: "韩寒", imageUrl: "", results: [{id: 1, score:6}, {id: 6, score: 4}]},
+    ];
+
+    module.category.books = [
+        {id: 1, name: "撒哈拉的故事", imageUrl: "", results: [{id: 1, score: 9}]},
+        {id: 2, name: "挪威的森林", imageUrl: "", results: [{id: 1, score: 8}]},
+        {id: 3, name: "如何成为一个妖孽", imageUrl: "", results: [{id: 2, score: 8}]},
+        {id: 4, name: "沙僧日记", imageUrl: "", results: [{id: 2, score: 7}]},
+        {id: 5, name: "平凡的世界", imageUrl: "", results: [{id: 3, score: 8}]},
+        {id: 6, name: "国富论", imageUrl: "", results: [{id: 3, score: 9}]},
+        {id: 7, name: "暴走漫画", imageUrl: "", results: [{id: 4, score: 7}]},
+        {id: 8, name: "十万个冷笑话", imageUrl: "", results: [{id: 4, score: 8}]},
+        {id: 9, name: "鬼吹灯", imageUrl: "", results: [{id: 5, score: 8}]},
+        {id: 10, name: "完美世界", imageUrl: "", results: [{id: 5, score: 9}]},
+        {id: 11, name: "探索者系列", imageUrl: "", results: [{id: 6, score: 9}]},
+        {id: 12, name: "怎见浮生不若梦", imageUrl: "", results: [{id: 6, score: 10}]},
+        {id: 13, name: "一起一起这里那里", imageUrl: "", results: [{id: 7, score: 6}]},
+        {id: 14, name: "守护甜心", imageUrl: "", results: [{id: 7, score: 7}]},
+        {id: 15, name: "无人生还", imageUrl: "", results: [{id: 8, score: 8}]},
+        {id: 16, name: "福尔摩斯全集", imageUrl: "", results: [{id: 8, score: 8}]},
+        {id: 17, name: "小王子", imageUrl: "", results: [{id: 1, score: 5}, {id: 7, score: 5}]},
+        {id: 18, name: "达芬奇密码", imageUrl: "", results: [{id: 3, score: 5}, {id: 8, score: 5}]},
+        {id: 19, name: "蜡笔小新", imageUrl: "", results: [{id: 2, score: 5}, {id: 4, score: 5}]},
+        {id: 20, name: "盗墓笔记", imageUrl: "", results: [{id: 5, score:5}, {id: 6, score: 5}]},
+    ];
+
+    module.category.musics = [
+        {id: 1, name: "旅行的意义", imageUrl: "", results: [{id: 1, score: 8}]},
+        {id: 2, name: "夜空中最亮的心", imageUrl: "", results: [{id: 1, score: 8}]},
+        {id: 3, name: "我的滑板鞋", imageUrl: "", results: [{id: 2, score: 9}]},
+        {id: 4, name: "小鸡哔哔", imageUrl: "", results: [{id: 2, score: 8}]},
+        {id: 5, name: "I left my heart in San Francisco", imageUrl: "", results: [{id: 3, score: 9}]},
+        {id: 6, name: "fly me to the moon", imageUrl: "", results: [{id: 3, score: 7}]},
+        {id: 7, name: "小苹果", imageUrl: "", results: [{id: 4, score: 9}]},
+        {id: 8, name: "互撸娃", imageUrl: "", results: [{id: 4, score: 7}]},
+        {id: 9, name: "初音未来的消失", imageUrl: "", results: [{id: 5, score: 10}]},
+        {id: 10, name: "红莲の弓矢", imageUrl: "", results: [{id: 5, score: 8}]},
+        {id: 11, name: "腐女进行曲", imageUrl: "", results: [{id: 6, score: 9}]},
+        {id: 12, name: "醉仙歌", imageUrl: "", results: [{id: 6, score: 8}]},
+        {id: 13, name: "123木头人", imageUrl: "", results: [{id: 7, score: 8}]},
+        {id: 14, name: "可爱颂", imageUrl: "", results: [{id: 7, score: 8}]},
+        {id: 15, name: "River Flows In You", imageUrl: "", results: [{id: 8, score: 6}]},
+        {id: 16, name: "casimir pulaski day", imageUrl: "", results: [{id: 8, score: 8}]},
+        {id: 17, name: "Knockin' On Heaven's Door", imageUrl: "", results: [{id: 3, score: 5}, {id: 5, score: 5}]},
+        {id: 18, name: "时光机", imageUrl: "", results: [{id: 1, score: 7}, {id: 7, score: 3}]},
+        {id: 19, name: "甩葱歌", imageUrl: "", results: [{id: 4, score: 5}, {id: 2, score: 5}]},
+        {id: 20, name: "BIRD", imageUrl: "", results: [{id: 5, score:5}, {id: 6, score: 5}]},
     ];
 
 
