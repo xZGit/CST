@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" name="viewport" id="viewport" />
+         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <link rel="stylesheet" href="css/test-video.css">
+        <script type="text/javascript" src="js/jquery-1.5.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery.pin.js"></script>
+        <title>让全世界认清你的真面目！</title>
+    </head>
+   <body>
+    	<div class="app">
+    		<div class="style">
+    			<p>选出你的影视 Style</p>
+    			<p>请选择三个选项</p>
+    			<ul class="pin">
+    				<li id="showo"><img src="images/frame_video_no1.png" alt=""></li>
+    				<li id="showt"><img src="images/frame_video_no2.png" alt=""></li>
+    				<li id="showh"><img src="images/frame_video_no3.png" alt=""></li>
+    			</ul>
+    		</div>
+    		<ul id="bt">
+    			<li><img src="images/video_01.png" height="150" width="150" alt=""><span>星际穿越</span></li>
+    			<li><img src="images/video_02.png" height="150" width="150" alt=""><span>不一样的美男子</span></li>
+    			<li><img src="images/video_03.png" height="150" width="150" alt=""><span>K-ONI轻音部</span></li>
+    			<li><img src="images/video_04.png" height="150" width="150" alt=""><span>古剑奇谭</span></li>
+    			<li><img src="images/video_05.png" height="150" width="150" alt=""><span>千与千寻</span></li>
+    			<li><img src="images/video_06.png" height="150" width="150" alt=""><span>马达加斯加的企鹅</span></li>
+    			<li><img src="images/video_07.png" height="150" width="150" alt=""><span>记忆碎片</span></li>
+    			<li><img src="images/video_08.png" height="150" width="150" alt=""><span>Bruno</span></li>
+    			<li><img src="images/video_09.png" height="150" width="150" alt=""><span>辛德勒的名单</span></li>
+    			<li><img src="images/video_10.png" height="150" width="150" alt=""><span>海上钢琴师</span></li>
+    			<li><img src="images/video_11.png" height="150" width="150" alt=""><span>暹罗之恋</span></li>
+    			<li><img src="images/video_12.png" height="150" width="150" alt=""><span>樱桃小丸子</span></li>
+    			<li><img src="images/video_13.png" height="150" width="150" alt=""><span>重庆森林</span></li>
+    			<li><img src="images/video_14.png" height="150" width="150" alt=""><span>屌丝男士</span></li>
+    			<li><img src="images/video_15.png" height="150" width="150" alt=""><span>暴走大事件</span></li>
+    			<li><img src="images/video_16.png" height="150" width="150" alt=""><span>银魂</span></li>
+    			<li><img src="images/video_17.png" height="150" width="150" alt=""><span>蝴蝶效应</span></li>
+    			<li><img src="images/video_18.png" height="148" width="148" alt=""><span>唐伯虎点秋香</span></li>
+    			<li><img src="images/video_19.png" height="148" width="148" alt=""><span>Sherlock</span></li>
+    			<li><img src="images/video_20.png" height="150" width="150" alt=""><span>万万没想到</span></li>
+    		</ul>
+    	</div>
+    	<div class="footer">
+    		<ul>
+    			<a href="/test-music"><li class="qian">上一题</li></a>
+    			<a href="/test-role"><li class="hou">下一题</li></a>
+    		</ul>
+    	</div>
+    		<script type="text/javascript">
+		$(".style").pin(
+			{
+      			containerSelector: ".app"
+			}
+		)
+		
+		var wtf = 0;
+		
+		$("#showo").click(function (e){
+			
+			if(wtf==0)
+			{
+				alert("当前没有选项哦！");
+			}else{
+				var html = e.target.src;
+				if(html.match("images/frame_video_no1.png"))
+				{
+					alert("当前没有选项哦！");				
+				}else
+				{
+					wtf--;
+					if(wtf>=0)
+					{
+						$("#showo").html("<img src='images/frame_video_no1.png' alt=''>");
+					}
+				
+				}
+			
+			}
+		
+		})
+		$("#showt").click(function (e){
+			
+			if(wtf==0){
+				alert("当前没有选项哦！");
+			}else
+			{
+				var html = e.target.src;
+				if(html.match("images/frame_video_no2.png"))
+				{
+					alert("当前没有选项哦！");				
+				}else
+				{
+					wtf--;
+					if(wtf>=0)
+					{
+						$("#showt").html("<img src='images/frame_video_no2.png' alt=''>");
+					}
+			}
+			
+			}
+		
+		})
+		
+		
+		
+		$("#showh").click(function (e){
+		
+			if(wtf==0){
+				alert("当前没有选项哦！");
+			}else
+			{
+				var html = e.target.src;
+				if(html.match("images/frame_video_no3.png"))
+				{
+					alert("当前没有选项哦！");
+				}else
+				{
+					wtf--;
+					if(wtf>=0)
+					{
+						$("#showh").html("<img src='images/frame_video_no3.png' alt=''>");
+					}
+				}
+				
+			}
+		})
+		
+		
+		
+		$("#bt li img").click(function(e){
+
+			 $(this).unbind('click');
+			if(wtf<3){
+				wtf++;
+			  	var target = e.target.src;
+			  	var htmlo = $("#showo").html();
+			  	var htmlt = $("#showt").html();
+			  	var htmlh = $("#showh").html();
+
+
+
+		  	
+		  	    if(wtf<=3)
+		  	    {
+		  			switch(wtf){
+		  				case 1: $("#showo").html("<img src='"+target+"' height='150' alt=''>");break;
+		  				case 2: 
+		  				if(htmlt.match("images/frame_video_no2.png")){
+		  					$("#showt").html("<img src='"+target+"' height='150' alt=''>");
+		  				}else{
+		  					$("#showo").html("<img src='"+target+"' height='150' alt=''>");
+		  				}break;
+		  				case 3:
+		  				if(htmlh.match("images/frame_video_no3.png")){
+		  					$("#showh").html("<img src='"+target+"' height='150' alt=''>");
+		  				}else if(htmlo.match("images/frame_video_no1.png")){
+		  					$("#showo").html("<img src='"+target+"' height='150' alt=''>");
+		  				}else{
+		  					$("#showt").html("<img src='"+target+"' height='150' alt=''>");
+		  				}break;
+		  		}
+		  	}else
+		  	{
+		  		alert("没有选项哦");
+		  	}
+			
+		  }		
+		
+			 
+		}); 
+	</script>
+    </body>
+</html>

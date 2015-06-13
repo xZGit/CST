@@ -25,7 +25,7 @@ var Controllers = {};
 
 Controllers.index = function *() {
 
-    this.redirect(url);
+    this.body = yield this.render({}, "test-start");
 };
 
 

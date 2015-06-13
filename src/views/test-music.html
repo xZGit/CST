@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" name="viewport" id="viewport" />
+         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <link rel="stylesheet" href="css/test-music.css">
+        <script type="text/javascript" src="js/jquery-1.5.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery.pin.js"></script>
+        <title>让全世界认清你的真面目！</title>
+    </head>
+   <body>
+    	<div class="app">
+    		<div class="style">
+    			<p>选出你的音乐 Style</p>
+    			<p>请选择三个选项</p>
+    			<ul class="pin">
+    				<li id="showo"><img src="images/frame_music_no1.png" alt=""></li>
+    				<li id="showt"><img src="images/frame_music_no2.png" alt=""></li>
+    				<li id="showh"><img src="images/frame_music_no3.png" alt=""></li>
+    			</ul>
+    		</div>
+    		<ul id="bt">
+    			<li><img src="images/music_01.png" height="150" width="150" alt=""><span>小鸡哔哔</span></li>
+    			<li><img src="images/music_02.png" height="150" width="150" alt=""><span>初音未来的消失</span></li>
+    			<li><img src="images/music_03.png" height="150" width="150" alt=""><span>小苹果</span></li>
+    			<li><img src="images/music_04.png" height="150" width="150" alt=""><span>123木头人</span></li>
+    			<li><img src="images/music_05.png" height="150" width="150" alt=""><span>I Left My HeartInSan Francisco</span></li>
+    			<li><img src="images/music_06.png" height="150" width="150" alt=""><span>互撸娃之歌</span></li>
+    			<li><img src="images/music_07.png" height="150" width="150" alt=""><span>Casimie Pulaski Day</span></li>
+    			<li><img src="images/music_08.png" height="150" width="150" alt=""><span>醉仙歌</span></li>
+    			<li><img src="images/music_09.png" height="150" width="150" alt=""><span>红莲の弓矢</span></li>
+    			<li><img src="images/music_10.png" height="150" width="150" alt=""><span>可爱颂</span></li>
+    			<li><img src="images/music_11.png" height="150" width="150" alt=""><span>旅行的意义</span></li>
+    			<li><img src="images/music_12.png" height="150" width="150" alt=""><span>夜空中最亮的星</span></li>
+    			<li><img src="images/music_13.png" height="150" width="150" alt=""><span>Fly Me To The Moon</span></li>
+    			<li><img src="images/music_14.png" height="150" width="150" alt=""><span>我的滑板鞋</span></li>
+    			<li><img src="images/music_15.png" height="150" width="150" alt=""><span>腐女进行曲</span></li>
+    			<li><img src="images/music_16.png" height="150" width="150" alt=""><span>Knockin' OnHeaven' sDoor</span></li>
+    			<li><img src="images/music_17.png" height="150" width="150" alt=""><span>River Flows In You</span></li>
+    			<li><img src="images/music_18.png" height="148" width="148" alt=""><span>时光机</span></li>
+    			<li><img src="images/music_19.png" height="148" width="148" alt=""><span>甩葱歌</span></li>
+    			<li><img src="images/music_20.png" height="150" width="150" alt=""><span>Bird</span></li>
+    		</ul>
+    	</div>
+    	<div class="footer">
+    		<ul>
+    			<a href="/test-book"><li class="qian">上一题</li></a>
+    			<a href="/test-video"><li class="hou">下一题</li></a>
+    		</ul>
+    	</div>
+    		<script type="text/javascript">
+		$(".style").pin(
+			{
+      			containerSelector: ".app"
+			}
+		)
+		
+		var wtf = 0;
+		
+		$("#showo").click(function (e){
+			
+			if(wtf==0)
+			{
+				alert("当前没有选项哦！");
+			}else{
+				var html = e.target.src;
+				if(html.match("images/frame_music_no1.png"))
+				{
+					alert("当前没有选项哦！");				
+				}else
+				{
+					wtf--;
+					if(wtf>=0)
+					{
+						$("#showo").html("<img src='images/frame_music_no1.png' alt=''>");
+					}
+				
+				}
+			
+			}
+		
+		})
+		$("#showt").click(function (e){
+			
+			if(wtf==0){
+				alert("当前没有选项哦！");
+			}else
+			{
+				var html = e.target.src;
+				if(html.match("images/frame_music_no2.png"))
+				{
+					alert("当前没有选项哦！");				
+				}else
+				{
+					wtf--;
+					if(wtf>=0)
+					{
+						$("#showt").html("<img src='images/frame_music_no2.png' alt=''>");
+					}
+			}
+			
+			}
+		
+		})
+		
+		
+		
+		$("#showh").click(function (e){
+		
+			if(wtf==0){
+				alert("当前没有选项哦！");
+			}else
+			{
+				var html = e.target.src;
+				if(html.match("images/frame_music_no3.png"))
+				{
+					alert("当前没有选项哦！");
+				}else
+				{
+					wtf--;
+					if(wtf>=0)
+					{
+						$("#showh").html("<img src='images/frame_music_no3.png' alt=''>");
+					}
+				}
+				
+			}
+		})
+		
+		
+		
+		$("#bt li img").click(function(e){
+
+			 $(this).unbind('click');
+			if(wtf<3){
+				wtf++;
+			  	var target = e.target.src;
+			  	var htmlo = $("#showo").html();
+			  	var htmlt = $("#showt").html();
+			  	var htmlh = $("#showh").html();
+
+
+
+		  	
+		  	    if(wtf<=3)
+		  	    {
+		  			switch(wtf){
+		  				case 1: $("#showo").html("<img src='"+target+"' height='150' alt=''>");break;
+		  				case 2: 
+		  				if(htmlt.match("images/frame_music_no2.png")){
+		  					$("#showt").html("<img src='"+target+"' height='150' alt=''>");
+		  				}else{
+		  					$("#showo").html("<img src='"+target+"' height='150' alt=''>");
+		  				}break;
+		  				case 3:
+		  				if(htmlh.match("images/frame_music_no3.png")){
+		  					$("#showh").html("<img src='"+target+"' height='150' alt=''>");
+		  				}else if(htmlo.match("images/frame_music_no1.png")){
+		  					$("#showo").html("<img src='"+target+"' height='150' alt=''>");
+		  				}else{
+		  					$("#showt").html("<img src='"+target+"' height='150' alt=''>");
+		  				}break;
+		  		}
+		  	}else
+		  	{
+		  		alert("没有选项哦");
+		  	}
+			
+		  }		
+		
+			 
+		}); 
+	</script>
+    </body>
+</html>

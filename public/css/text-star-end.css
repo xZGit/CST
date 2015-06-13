@@ -2,7 +2,7 @@
 * @Author: Administrator
 * @Date:   2015-06-10 13:48:58
 * @Last Modified by:   Administrator
-* @Last Modified time: 2015-06-11 16:45:35
+* @Last Modified time: 2015-06-13 10:46:43
 */
 *{
 	margin: 0;
@@ -51,7 +51,7 @@
 	display: block;
 	background: #fff;
 	margin:auto;
-	margin-top: 33px;
+	margin-top: 56px;
 	border-radius: 15px;
 	text-align: center;
 	line-height: 55px;
@@ -136,7 +136,7 @@ hr{
 	margin:auto;
 	background: #fff;
 }
-.app .style p{
+.app .style p:nth-of-type(1){
 	width: 100%;
 	height: 55px;
 	text-align: center;
@@ -144,9 +144,17 @@ hr{
 	color:#F5A623;
 	font-size: 1.2em;
 }
+.app .style p:nth-of-type(2){
+	width: 100%;
+	height: 12px;
+	text-align: center;
+	line-height: 6px;
+	color:#C4C4C4;
+	font-size: 0.7em;
+}
 .app .style .pin{
 	width: 55%;
-	height: 96px;
+	height: 93px;
 	margin:auto;
 }
 .app .style .pin .show img{
@@ -156,14 +164,12 @@ hr{
 .app .style .pin li{
 	width: 45px;
 	height: 45px;
-	background: #DEF3EE;
 	list-style: none;
-	border:2px solid #FFBD21;
 	float: left;
-	border-radius: 100px; 
+	border-radius: 15px; 
 	/*margin-left:8%;
 	margin-top:5%;*/
-	margin:5% auto 0 5%;
+	margin:5% auto 0 6%;
 	text-align: center;
 	font-size: 0.5em;
 	color:#fff;
@@ -185,11 +191,11 @@ hr{
 	width:20%;
 	height: 60px;
 	list-style: none;
-	background: #cc0;
 	float: left;
 	margin-left: 3.1%;
 	margin-bottom: 13%;
-	
+		text-align: center;
+	line-height: 15px;
 	
 }
 .app ul li img{
@@ -201,7 +207,7 @@ hr{
 	width: 60px;
 	height: 10px;
 	text-align: center;
-	color:#33B1A4;
+	color:#54B1A4;
 	font-size: 0.7em;
 }
 .footer{

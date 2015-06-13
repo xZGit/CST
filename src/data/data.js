@@ -7,17 +7,37 @@
 (function (module) {
 
     module.results = {
-        1: {name: "文艺", description: "", score: 109},
-        2: {name: "二", description: "", score: 110},
-        3: {name: "高逼格", description: "", score: 106},
-        4: {name: "无节操", description: "", score: 109},
-        5: {name: "腐", description: "", score: 109},
-        6: {name: "宅", description: "", score: 101},
-        7: {name: "萌", description: "", score: 103},
-        8: {name: "高智商", description: "", score: 101}
+        1: {name: "文艺", title: "上帝说，要有文艺范，于是就有了你", description: "", score: 109},
+        2: {name: "二", title: "来，先抽根辣条压压惊", description: "", score: 110},
+        3: {name: "高逼格", title: "一入糗百深似海，从此节操是路人/节操！你有种别走", description: "", score: 106},
+        4: {name: "无节操", title: "我放佛又听到你们在背后说我帅/ 你就是一口井 横竖都是二", description: "", score: 109},
+        5: {name: "腐", title: "鸳鸳相抱何时了，鸯在一旁看热闹", description: "", score: 109},
+        6: {name: "宅", title: "我明明记得上次出门还是冬天啊！", description: "", score: 101},
+        7: {name: "萌/喵~", title: "你们不能因为我超可爱就欺负我丫", description: "", score: 103},
+        8: {name: "烧脑", title: "智商24小时在线,连不连得上就看设备（naozi）带了没 真相只有一个", description: "", score: 101},
+        13: {name: "高逼格文艺范", title: "上帝说，要有逼格高的文艺范，于是就有了你", description: ""},
+        14: {name: "无节操文艺骚", title: "问君能有几多愁，恰似路过打酱油", description: ""},
+        12: {name: "文艺青年不二逼", title: "问君能有几多愁，恰似一壶二锅头", description: ""},
+        16: {name: "文艺宅", title: "没有医险和寿险，我还是不要出门了", description: ""},
+        15: {name: "文艺腐", title: "鸳鸳相抱何时了，鸯在一旁看热闹", description: ""},
+        17: {name: "文艺猫", title: "卖萌嘟嘴剪刀手，忧郁深沉无所谓", description: ""},
+        18: {name: "爱烧脑的文艺青年", title: "人生赢家说的就是你！", description: ""},
+        7: {name: "高逼格的宅人", title: "不鸣则已，一鸣惊人", description: ""},
+        7: {name: "高逼格腐女", title: "外表冷艳高贵攻，内心二逼吐槽受", description: ""},
+        7: {name: "高逼格萌", title: "原谅我这一生不羁装逼爱卖萌", description: ""},
+        7: {name: "高逼格烧脑", title: "最强大脑，just do it now", description: ""},
+        7: {name: "无节操二逼", title: "掉与不掉，节操就在那里，不增不减（相见时难别亦难，肥皂一掉菊花残", description: ""},
+        7: {name: "萌/喵~", title: "你们不能因为我超可爱就欺负我丫", description: ""},
+        7: {name: "萌/喵~", title: "你们不能因为我超可爱就欺负我丫", description: ""},
+        7: {name: "萌/喵~", title: "你们不能因为我超可爱就欺负我丫", description: ""},
+        7: {name: "萌/喵~", title: "你们不能因为我超可爱就欺负我丫", description: ""},
+        7: {name: "萌/喵~", title: "你们不能因为我超可爱就欺负我丫", description: ""},
+        7: {name: "萌/喵~", title: "你们不能因为我超可爱就欺负我丫", description: ""},
+
+
     };
 
-    module.category={};
+    module.category = {};
 
     module.category.apps = [
         {id: 1, name: "豆瓣FM", imageUrl: "", results: [{id: 1, score: 8}]},
@@ -62,7 +82,7 @@
         {id: 17, name: "古剑奇谭", imageUrl: "", results: [{id: 6, score: 4}, {id: 5, score: 6}]},
         {id: 18, name: "唐伯虎点秋香", imageUrl: "", results: [{id: 2, score: 6}, {id: 4, score: 4}]},
         {id: 19, name: "Sherlock", imageUrl: "", results: [{id: 3, score: 6}, {id: 8, score: 4}]},
-        {id: 20, name: "千与千寻", imageUrl: "", category: [{id: 7, score:6}, {id: 1, score: 4}]},
+        {id: 20, name: "千与千寻", imageUrl: "", category: [{id: 7, score: 6}, {id: 1, score: 4}]},
     ];
 
     module.category.stars = [
@@ -85,7 +105,7 @@
         {id: 17, name: "李易峰", imageUrl: "", results: [{id: 7, score: 5}, {id: 5, score: 5}]},
         {id: 18, name: "jobs", imageUrl: "", results: [{id: 3, score: 5}, {id: 8, score: 5}]},
         {id: 19, name: "周星驰", imageUrl: "", results: [{id: 2, score: 5}, {id: 4, score: 4}]},
-        {id: 20, name: "韩寒", imageUrl: "", results: [{id: 1, score:6}, {id: 6, score: 4}]},
+        {id: 20, name: "韩寒", imageUrl: "", results: [{id: 1, score: 6}, {id: 6, score: 4}]},
     ];
 
     module.category.books = [
@@ -108,7 +128,7 @@
         {id: 17, name: "小王子", imageUrl: "", results: [{id: 1, score: 5}, {id: 7, score: 5}]},
         {id: 18, name: "达芬奇密码", imageUrl: "", results: [{id: 3, score: 5}, {id: 8, score: 5}]},
         {id: 19, name: "蜡笔小新", imageUrl: "", results: [{id: 2, score: 5}, {id: 4, score: 5}]},
-        {id: 20, name: "盗墓笔记", imageUrl: "", results: [{id: 5, score:5}, {id: 6, score: 5}]},
+        {id: 20, name: "盗墓笔记", imageUrl: "", results: [{id: 5, score: 5}, {id: 6, score: 5}]},
     ];
 
     module.category.musics = [
@@ -131,13 +151,8 @@
         {id: 17, name: "Knockin' On Heaven's Door", imageUrl: "", results: [{id: 3, score: 5}, {id: 5, score: 5}]},
         {id: 18, name: "时光机", imageUrl: "", results: [{id: 1, score: 7}, {id: 7, score: 3}]},
         {id: 19, name: "甩葱歌", imageUrl: "", results: [{id: 4, score: 5}, {id: 2, score: 5}]},
-        {id: 20, name: "BIRD", imageUrl: "", results: [{id: 5, score:5}, {id: 6, score: 5}]},
+        {id: 20, name: "BIRD", imageUrl: "", results: [{id: 5, score: 5}, {id: 6, score: 5}]},
     ];
-
-
-
-
-
 
 
 }(exports));
