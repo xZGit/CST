@@ -147,18 +147,33 @@ function *generateResult(that) {
             }
         }
     });
-    if (lastResult.length == 0) {
 
+    function getSortAndAdd(arr){
+        if(arr[0]>arr[1]){
+            return parseInt(arr[1].toString()+arr[0].toString());
+        }
+         return parseInt(arr[0].toString()+arr[1].toString());
     }
+    var last;
+    if (lastResult.length == 0) {
+       last=10;
+    }
+    if (lastResult.length == 2){
+        last = getSortAndAdd(lastResult);
+    }
+    if(lastResult.length==1 ||!results[last]) last = lastResult[0];
     var record = new Record();
     record.openid = openid;
     record.wechatName = nickname;
-    record.result = lastResult;
+    record.result = last;
     var r = yield record.save();
     delete that.session.items;
     that.body = yield that.render({result:r._id});
 
 };
+
+
+
 
 
 module.exports = Controllers;
