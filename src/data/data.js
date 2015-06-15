@@ -9,8 +9,8 @@
     module.results = {
         1: {name: "文艺", title: "上帝说，要有文艺范，于是就有了你", description: "", score: 109},
         2: {name: "二", title: "来，先抽根辣条压压惊", description: "", score: 110},
-        3: {name: "高逼格", title: "一入糗百深似海，从此节操是路人/节操！你有种别走", description: "", score: 106},
-        4: {name: "无节操", title: "我放佛又听到你们在背后说我帅/ 你就是一口井 横竖都是二", description: "", score: 109},
+        3: {name: "高逼格", title: "节操！你有种别走", description: "", score: 106},
+        4: {name: "无节操", title: "我放佛又听到你们在背后说我帅", description: "", score: 109},
         5: {name: "腐", title: "鸳鸳相抱何时了，鸯在一旁看热闹", description: "", score: 109},
         6: {name: "宅", title: "我明明记得上次出门还是冬天啊！", description: "", score: 101},
         7: {name: "萌/喵~", title: "你们不能因为我超可爱就欺负我丫", description: "", score: 103},
@@ -26,15 +26,22 @@
         35: {name: "高逼格腐女", title: "外表冷艳高贵攻，内心二逼吐槽受", description: ""},
         37: {name: "高逼格萌", title: "原谅我这一生不羁装逼爱卖萌", description: ""},
         38: {name: "高逼格烧脑", title: "最强大脑，just do it now", description: ""},
-        7: {name: "无节操二逼", title: "掉与不掉，节操就在那里，不增不减（相见时难别亦难，肥皂一掉菊花残", description: ""},
-        7: {name: "萌/喵~", title: "你们不能因为我超可爱就欺负我丫", description: ""},
-        7: {name: "萌/喵~", title: "你们不能因为我超可爱就欺负我丫", description: ""},
-        7: {name: "萌/喵~", title: "你们不能因为我超可爱就欺负我丫", description: ""},
-        7: {name: "萌/喵~", title: "你们不能因为我超可爱就欺负我丫", description: ""},
-        7: {name: "萌/喵~", title: "你们不能因为我超可爱就欺负我丫", description: ""},
-        7: {name: "萌/喵~", title: "你们不能因为我超可爱就欺负我丫", description: ""},
-
-
+        24: {name: "无节操二逼", title: "相见时难别亦难，肥皂一掉菊花残", description: ""},
+        46: {name: "无节操御宅族", title: "帅的人已经出门了，丑的还在家捡节操", description: ""},
+        45: {name: "无节操腐人类", title: "但使龙城飞将在，六宫粉黛无颜色", description: ""},
+        47: {name: "无节操&萌", title: "横眉冷对千夫指，感觉自己萌萌哒", description: ""},
+        48: {name: "无节操&高智商", title: "站在人类金字塔顶端玩耍吧", description: ""},
+        26: {name: "二＆宅", title: "不要再宅了，二货出来high!", description: ""},
+        25: {name: "二＆腐", title: "你快乐吗？我很快乐。前方高能，发现帅哥一对", description: ""},
+        27: {name: "二＆萌", title: "二到久时天然呆，呆到深处自然萌", description: ""},
+        28: {name: "二＆高智商", title: "站在人类金字塔顶端玩耍吧", description: ""},
+        56: {name: "宅腐", title: "鸳鸳相抱何时了，鸯在一旁看热闹", description: ""},
+        67: {name: "御宅猫", title: "伸个懒腰，喵~ 古来圣贤皆寂寞，不如在家卖个萌", description: ""},
+        68: {name: "宅＆烧脑", title: "一个人起舞，一个人精彩", description: ""},
+        57: {name: "腐萌", title: "o(≧v≦)oo(≧v≦)oo(≧v≦)o 一入腐门深似海，感觉自己萌萌哒", description: ""},
+        58: {name: "腐＆烧脑", title: "很认真地问你，性别不同如何谈恋爱？", description: ""},
+        78: {name: "萌＆烧脑", title: "低调走过，深沉卖萌", description: ""},
+        0: {name: "大众青年", title: "我就是我，是颜色不一样的烟火", description: ""}
     };
 
     module.category = {};
