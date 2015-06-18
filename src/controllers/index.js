@@ -83,7 +83,10 @@ Controllers.getUserInfo = function *() {
 
 Controllers.getResult = function *() {
     var id = this.params.id;
-    var record = yield Record.findOne({_id: id}).exec();
+    var record = new Record();
+    record.result = "FFFF";
+    var r = yield record.save();
+
     if (!record || !record.result || _.size(record.result) == 0) return yield this.throwCode(1003);
     var returnResult = [];
 
