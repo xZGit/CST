@@ -25,8 +25,8 @@ require("./src/routes")(app);
 
 
 // Start app
-if (!module.parent) {
+//if (!module.parent) {
     app.listen(config.app.port);
     console.log("Server started, listening on port: " + config.app.port);
-}
+//}
 console.log("Environment: " + config.app.env);
