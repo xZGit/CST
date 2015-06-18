@@ -25,8 +25,6 @@ module.exports = function (app, config) {
 
     var db = require("./models")(config);
 
-    require('koa-csrf')(app);
-
     app.use(session({
         key: " cst.sid",
         store: new MongoStore({db: db, ttl: 60 * 60 * 1000}), //1小时过期
