@@ -2,7 +2,7 @@
 * @Author: Administrator
 * @Date:   2015-06-10 13:48:58
 * @Last Modified by:   Administrator
-* @Last Modified time: 2015-06-13 10:46:43
+* @Last Modified time: 2015-06-18 10:11:06
 */
 *{
 	margin: 0;
@@ -10,20 +10,21 @@
 	font-family: "微软雅黑";
 }
 .title{
-	width: 85%;
-	height: 180px;
+	width: 100%;
+	height: 116px;
 	margin:auto;
+	background: #61D9D7;
 }
 
-.title img{
-	max-width: 100%;
-	margin-top:45px;
+.title p{
+	text-align: center;
+	line-height:80px; 
+	color:#fff;
 }
 
 .survey{
 	width: 100%;
 	height: 100%;
-	background: #84CECC;
 	margin-bottom: -1px;
 }
 .survey p:nth-of-type(1){
@@ -36,26 +37,31 @@
 	margin-top: -32px;
 	background: #fff;
 }
+.survey p:nth-of-type(1) img{
+	width: 100%;
+	height: 100%;
+	border-radius: 100px;
+}
 .survey p:nth-of-type(2){
 	width: 80%;
 	height: 196px;
 	margin:auto;
 	padding-top: 65px;
 	font-size:1.1em;
-	color:#fff;
+	color:#86552F;
 	line-height: 33px;
 }
 .survey a{
 	width: 50%;
 	height: 55px;
 	display: block;
-	background: #fff;
+	background: #FFB73A;
 	margin:auto;
 	margin-top: 56px;
 	border-radius: 15px;
 	text-align: center;
 	line-height: 55px;
-	color: #FF990F;
+	color: #FFF;
 	font-size:1.2em;
 }
 .survey a:link{
@@ -72,21 +78,6 @@
 	padding-bottom: 40px;
 }
 /*end*/
-.title-end{
-	width: 90%;
-	height: 120px;
-	margin:auto;
-}
-.title-end img{
-	max-width: 100%;
-	margin-top:45px;
-}
-hr{
-	margin-top: 15px;
-	border:0;
-	background-color:#E6E6E6;
-	height:1px;
-}
 .result{
 	width:90%;
 	height: 100%;
@@ -107,26 +98,46 @@ hr{
 	max-width: 100%;
 	margin-top: 25px;
 }
-.result p:nth-of-type(4){
-	width:70%;
+.result a:link{
+	text-decoration: none;
+}
+.result a p:nth-of-type(1){
+	width:73%;
 	height: 50px;
-	background: #FFB73A;
 	border-radius: 10px;
 	margin:auto;
 	text-align: center;
 	line-height: 50px;
 	color: #fff;
-	margin-top: 50px;
-	  margin-bottom: 90px;
+	font-size:1em;margin-top:25px;
+		background:#FFB73A;
+}
+.result p:nth-of-type(4){
+	width:73%;
+	height: 50px;
+	border-radius: 10px;
+	margin:auto;
+	text-align: center;
+	line-height: 50px;
+	color: red;
+	margin-bottom: 90px;
+	font-size: 0.7em;
+
 
 }
 .link{
 	width: 100%;
-	height: 59px;
+	height: 50px;
 	position: fixed;
 	bottom: 0;
 }
+.link a{
+	margin:0;
+	padding:0;
+}
 .link img{
+	width: 100%;
+	height: 100%;
 	max-width: 100%;
 }
 /*app*/
@@ -153,7 +164,7 @@ hr{
 	font-size: 0.7em;
 }
 .app .style .pin{
-	width: 55%;
+	width: 69%;
 	height: 93px;
 	margin:auto;
 }
@@ -162,18 +173,31 @@ hr{
 	height: 100%;
 }
 .app .style .pin li{
-	width: 45px;
-	height: 45px;
+	width: 60px;
+	height: 60px;
 	list-style: none;
 	float: left;
-	border-radius: 15px; 
-	/*margin-left:8%;
-	margin-top:5%;*/
 	margin:5% auto 0 6%;
 	text-align: center;
 	font-size: 0.5em;
 	color:#fff;
 	line-height: 45px;
+	
+}
+.app .style .pin li:nth-of-type(1){
+	background: url(../images/frame_app_no1.png);
+	-webkit-mask-image: url(../images/frame_app_no1.png);
+	background-size: 100% 100%;
+}
+.app .style .pin li:nth-of-type(2){
+	background: url(../images/frame_app_no2.png);
+	-webkit-mask-image: url(../images/frame_app_no2.png);
+	background-size: 100% 100%;
+}
+.app .style .pin li:nth-of-type(3){
+	background: url(../images/frame_app_no3.png);
+	-webkit-mask-image: url(../images/frame_app_no3.png);
+	background-size: 100% 100%;
 }
 .app{
 	width: 100%;
@@ -198,9 +222,13 @@ hr{
 	line-height: 15px;
 	
 }
-.app ul li img{
+.app .pin li img{
 	width: 100%;
 	height: 100%;
+}
+.app #bt li img{
+	width: 60px;
+	height: 60px;
 	text-align: center;
 }
 .app ul li span{
@@ -212,14 +240,15 @@ hr{
 }
 .footer{
 	width: 100%;
-	height: 50px;
-	background: #DEF3EE;
+	height: 75px;
+	background: #fff;
 
 }
 .footer ul{
 	width: 90%;
-	height: 50px;
-	margin:auto;
+	height: 40px;
+	margin: auto;
+	padding-top: 20px;
 }
 .footer ul .qian{
 	width: 133px;
@@ -228,10 +257,20 @@ hr{
 	float: left;
 	list-style: none;
 	border-radius: 10px;
-	text-align: center;
-	line-height: 40px;
 	color:#fff;
 	font-size: 0.7em;
+	line-height: 40px;
+}
+.footer ul .qian img{
+	float: left;
+	padding: 12px 17px;
+
+	max-width: 7%;
+}
+.footer ul .hou img{
+	float: right;
+	padding: 12px 17px;
+	max-width: 7%;
 }
 .footer ul .hou{
 	width: 133px;
@@ -240,9 +279,10 @@ hr{
 	float: right;
 	list-style: none;
 	border-radius: 10px;
-	text-align: center;
 	line-height: 40px;
 	color:#fff;
 	font-size: 0.7em;
 }
-
+.footer ul p{
+margin-left: 49px;
+}

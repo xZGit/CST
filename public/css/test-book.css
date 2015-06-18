@@ -2,7 +2,7 @@
 * @Author: Administrator
 * @Date:   2015-06-12 11:13:59
 * @Last Modified by:   Administrator
-* @Last Modified time: 2015-06-13 10:47:03
+* @Last Modified time: 2015-06-18 10:08:42
 */
 *{
 	margin: 0;
@@ -32,7 +32,7 @@
 	font-size: 0.7em;
 }
 .app .style .pin{
-	width: 61%;
+	width: 67%;
 	height: 93px;
 	margin:auto;
 }
@@ -41,18 +41,30 @@
 	height: 100%;
 }
 .app .style .pin li{
-	width: 55px;
-	height: 55px;
+	width: 60px;
+	height: 60px;
 	list-style: none;
 	float: left;
-	border-radius: 15px; 
-	/*margin-left:8%;
-	margin-top:5%;*/
 	margin:5% auto 0 5%;
 	text-align: center;
 	font-size: 0.5em;
 	color:#fff;
 	line-height: 45px;
+}
+.app .style .pin li:nth-of-type(1){
+	background: url(../images/frame_book_no1.png);
+	-webkit-mask-image: url(../images/frame_book_no1.png);
+	background-size: 100% 100%;
+}
+.app .style .pin li:nth-of-type(2){
+	background: url(../images/frame_book_no2.png);
+	-webkit-mask-image: url(../images/frame_book_no2.png);
+	background-size: 100% 100%;
+}
+.app .style .pin li:nth-of-type(3){
+	background: url(../images/frame_book_no3.png);
+	-webkit-mask-image: url(../images/frame_book_no3.png);
+	background-size: 100% 100%;
 }
 .app{
 	width: 100%;
@@ -72,33 +84,38 @@
 	list-style: none;
 	float: left;
 	margin-left: 3.1%;
-	margin-bottom: 16%;
+	margin-bottom: 13%;
 		text-align: center;
 	line-height: 15px;
 	
 }
-.app ul li img{
+.app .pin li img{
 	width: 100%;
 	height: 100%;
+}
+.app #bt li img{
+	width: 60px;
+	height: 60px;
 	text-align: center;
 }
 .app ul li span{
 	width: 60px;
 	height: 10px;
 	text-align: center;
-	color:#B29450;
+	color:#54B1A4;
 	font-size: 0.7em;
 }
 .footer{
 	width: 100%;
-	height: 50px;
-	background: #FAF8D9;
+	height: 75px;
+	background: #fff;
 
 }
 .footer ul{
 	width: 90%;
-	height: 50px;
-	margin:auto;
+	height: 40px;
+	margin: auto;
+	padding-top: 20px;
 }
 .footer ul .qian{
 	width: 133px;
@@ -107,21 +124,32 @@
 	float: left;
 	list-style: none;
 	border-radius: 10px;
-	text-align: center;
-	line-height: 40px;
 	color:#fff;
 	font-size: 0.7em;
+	line-height: 40px;
+}
+.footer ul .qian img{
+	float: left;
+	padding: 12px 17px;
+
+	max-width: 7%;
+}
+.footer ul .hou img{
+	float: right;
+	padding: 12px 17px;
+	max-width: 7%;
 }
 .footer ul .hou{
 	width: 133px;
 	height: 40px;
-	background: #71CA0F;
+	background:#71CA0F;
 	float: right;
 	list-style: none;
 	border-radius: 10px;
-	text-align: center;
 	line-height: 40px;
 	color:#fff;
 	font-size: 0.7em;
 }
-
+.footer ul p{
+margin-left: 49px;
+}
