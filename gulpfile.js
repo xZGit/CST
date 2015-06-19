@@ -25,14 +25,14 @@ gulp.task('scripts', function() {
 gulp.task('images', function() {
     return gulp.src('public/images/*')
         .pipe(cache(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true })))
-        .pipe(gulp.dest('build/img'));
+        .pipe(gulp.dest('build/images'));
 });
 
 
 gulp.task('csss', function() {
     return gulp.src('public/css/**/*.css')
         .pipe(minifyCSS())
-        .pipe(concat('style.min.css'))
+        //.pipe(concat('style.min.css'))
         .pipe(gulp.dest('build/css'));
 });
 

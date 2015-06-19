@@ -41,8 +41,19 @@ Controllers.getCategory = function *() {
     }
     this.body = yield this.render({
         category: this.params.category,
-        items: categories[this.params.category]
-    }, "category");
+        //items: categories[this.params.category]
+    }, this.params.category);
+};
+
+
+
+Controllers.back = function *() {
+    if (!categories[this.params.category]) {
+        return yield this.throwCode(1002, this.params.category);
+    }
+    var i = categoryNames.indexOf(this.params.category);
+    if(i==0) return this.redirect("/getUserInfo");
+    this.redirect("/getCategory/"+categoryNames[i-1]);
 };
 
 
@@ -77,24 +88,16 @@ Controllers.getUserInfo = function *() {
     var user = {data: {openid: 123, nickname: "xx"}};
     this.session.openid = user.data.openid;
     this.session.nickname = user.data.nickname;
-    this.body = yield this.render(user.data, "test-start");
+    this.body = yield this.render(this.session, "start");
 };
 
 
 Controllers.getResult = function *() {
     var id = this.params.id;
-    var record = new Record();
-    record.result = "FFFF";
-    var r = yield record.save();
+    var record = yield Record.findOne({_id: id}).exec();
+    if (!record || !record.result ) return yield this.throwCode(1003);
 
-    if (!record || !record.result || _.size(record.result) == 0) return yield this.throwCode(1003);
-    var returnResult = [];
-
-    _(record.result).forEach(function (r) {
-        returnResult.push(results[r]);
-    }).value();
-
-    this.body = returnResult;
+    this.body = results[record.result];
 };
 
 
