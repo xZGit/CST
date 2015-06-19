@@ -1,0 +1,55 @@
+
+        <link rel="stylesheet" href="css/test-role.css">
+
+    	<div class="app">
+    		<div class="style">
+    			<p>选出你的人物角色 Style</p>
+    			<p>请选择三个选项</p>
+    			<ul class="pin">
+    				<li id="showo"></li>
+    				<li id="showt"></li>
+    				<li id="showh"></li>
+    			</ul>
+    		</div>
+    		<ul id="bt">
+				<li><img id="12" src="images/role_01.jpg" height="695" width="600" alt=""><span>樱兰</span></li>
+				<li><img id="3" src="images/role_02.jpg" height="150" width="150" alt=""><span>张全蛋</span></li>
+				<li><img id="5" src="images/role_03.jpg" height="150" width="150" alt=""><span>Walter White</span></li>
+				<li><img id="1" src="images/role_04.jpg" height="150" width="150" alt=""><span>苏打绿</span></li>
+				<li><img id="10" src="images/role_05.jpg" height="150" width="150" alt=""><span>Angelababy</span></li>
+				<li><img id="8" src="images/role_06.jpg" height="150" width="150" alt=""><span>坂田银时</span></li>
+				<li><img id="13" src="images/role_07.jpg" height="150" width="150" alt=""><span>大白</span></li>
+				<li><img id="7" src="images/role_08.jpg" height="150" width="150" alt=""><span>王尼玛</span></li>
+				<li><img id="16" src="images/role_09.jpg" height="150" width="150" alt=""><span>克里斯托弗·诺兰</span></li>
+				<li><img id="11" src="images/role_10.jpg" height="150" width="150" alt=""><span>小野寺律</span></li>
+				<li><img id="6" src="images/role_11.jpg" height="150" width="150" alt=""><span>Elon Musk</span></li>
+				<li><img id="4" src="images/role_12.jpg" height="150" width="150" alt=""><span>王大锤</span></li>
+				<li><img id="15" src="images/role_13.jpg" height="150" width="150" alt=""><span>Albert Einstein</span></li>
+				<li><img id="9" src="images/role_14.jpg" height="150" width="150" alt=""><span>路飞</span></li>
+				<li><img id="2" src="images/role_15.jpg" height="150" width="150" alt=""><span>陈绮贞</span></li>
+				<li><img id="14" src="images/role_16.jpg" height="150" width="150" alt=""><span>阿拉蕾</span></li>
+				<li><img id="17" src="images/role_17.jpg" height="150" width="150" alt=""><span>李易峰</span></li>
+				<li><img id="18" src="images/role_18.jpg" height="148" width="148" alt=""><span>Jobs</span></li>
+				<li><img id="19" src="images/role_19.jpg" height="148" width="148" alt=""><span>周星驰</span></li>
+				<li><img id="20" src="images/role_20.jpg" height="150" width="150" alt=""><span>韩寒</span></li>
+    		</ul>
+    	</div>
+    	<div class="footer">
+    		<ul>
+    			<a href="videos.html"><li class="qian"><img src="images/arrow_back.png"  alt=""><p>上一题</p></li></a>
+    		       <a href="javascript:;"><li class="hou"><img src="images/arrow_go.png"  alt=""><p>提交</p></li></a>
+    		</ul>
+    	</div>
+    	<script type="text/javascript" src="js/all.js"></script>
+        <script type="text/javascript">
+                $(document).ready(
+                    function() {    
+                         $(".hou").click(function(e) {
+                        if (number >= 3) {
+                            location.href = "end.html";
+                        } else {
+                           alert("请选择三项！") 
+                        }
+                    });
+                });
+            </script>
