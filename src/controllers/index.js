@@ -97,7 +97,7 @@ Controllers.getResult = function *() {
     var record = yield Record.findOne({_id: id}).exec();
     if (!record || !record.result ) return yield this.throwCode(1003);
 
-    this.body = results[record.result];
+    this.body = yield this.render(results[record.result], "end");;
 };
 
 
