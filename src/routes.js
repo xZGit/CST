@@ -25,41 +25,8 @@ module.exports = function (app) {
 
     app.get("/getUserInfo", controller.getUserInfo);
 
-    app.get("/getUserInfo", controller.getUserInfo);
+    app.get("/back/:category", controller.back);
 
-    app.get("/test-app",function *(){
-            this.body = yield this.render({}, "test-app");
-    }
-   );
-
-
-    app.get("/test-book",function *(){
-            this.body = yield this.render({}, "test-book");
-        }
-    );
-    app.get("/test-music",function *(){
-            this.body = yield this.render({}, "test-music");
-        }
-    );
-
-    app.get("/test-role",function *(){
-            this.body = yield this.render({}, "test-role");
-        }
-    );
-
-    app.get("/test-start",function *(){
-            this.body = yield this.render({}, "test-start");
-        }
-    );
-
-    app.get("/test-video",function *(){
-            this.body = yield this.render({}, "test-video");
-        }
-    );
-    app.get("/test-end",function *(){
-            this.body = yield this.render({}, "test-end");
-        }
-    );
     app.post("/api/setCategory", controller.setCategory);
 
     setUpPageRoute("/getResult/:id", controller.getResult);

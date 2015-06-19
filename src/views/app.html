@@ -1,4 +1,14 @@
 
+{% extends 'layout.html' %}
+
+
+{% block head %}
+{% parent %}
+
+{% endblock %}
+
+
+{% block content %}
 <link rel="stylesheet" href="http://localhost:3001/css/text-star-end.css">
 
 
@@ -12,6 +22,7 @@
             <li id="showh"></li>
         </ul>
     </div>
+    <input id="category" style="display:none" value="{{category}}"/>
     <ul id="bt">
         <li><img id="2" src="http://localhost:3001/images/app_01.jpg" height="150" width="150" alt=""><span>ONE</span></li>
         <li><img id="14" src="http://localhost:3001/images/app_02.jpg" height="150" width="150" alt=""><span>颜文字</span></li>
@@ -38,18 +49,9 @@
 <div class="footer">
     <ul>
         <a><li class="qian"><img src="http://localhost:3001/images/arrow_back.png" alt=""><p>返回</p></li></a>
-        <a><li class="hou"><img src="http://localhost:3001/images/arrow_go.png"  alt=""><p>下一题</p></li></a>
+        <a><li class="hou" ><img src="http://localhost:3001/images/arrow_go.png"  alt=""><p>下一题</p></li></a>
     </ul>
 </div>
-<script type="text/javascript">
-    $(document).ready(
-            function() {
-                $(".hou").click(function(e) {
-                    if (selects.length >= 3) {
-//                            location.href = "books.html";
-                    } else {
-                        alert("请选择三项！")
-                    }
-                });
-            });
-</script>
+
+
+{% endblock %}
