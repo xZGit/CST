@@ -85,7 +85,7 @@ Controllers.getUserInfo = function *() {
     var param = querystring.parse(this.request.url.split('?')[1]);
     var accessReq = yield client.getAccessToken(param.code);
     var user = yield client.getUser(accessReq.data.openid);
-    //var user = {data: {openid: 123, nickname: "xx", headimgurl:"/images/role_05.jpg"}};
+    //var user = {data: {openid: 123, nickname: "xx", headimgurl:"http://wx.qlogo.cn/mmopen/EuDV2TXLU1ohdVLJDQEFY0bMpMXCjice6fC8azRCxPvTKCngS2Bpb3icdZOic6xgzTPZIqeDtZico6DftlNFqS8edo19zicanjOicp/0"}};
     this.session.openid = user.data.openid;
     this.session.nickname = user.data.nickname;
     this.session.headimgurl = user.data.headimgurl;
@@ -177,6 +177,7 @@ function *generateResult(that) {
     record.openid = openid;
     record.wechatName = nickname;
     record.result = last;
+    console.log(record);
     var r = yield record.save();
     delete that.session.items;
     that.body = yield that.render({result: r._id});

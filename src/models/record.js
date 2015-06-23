@@ -12,6 +12,7 @@ var Schema = mongoose.Schema;
 var RecordSchema = new Schema({
     wechatId: { type: String },
     wechatName:{ type: String },
+    openid: { type: String},
     result: {type: Number},
     updated: { type: Date, default: Date.now },
 });
