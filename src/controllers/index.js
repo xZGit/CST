@@ -46,14 +46,13 @@ Controllers.getCategory = function *() {
 };
 
 
-
 Controllers.back = function *() {
     if (!categories[this.params.category]) {
         return yield this.throwCode(1002, this.params.category);
     }
     var i = categoryNames.indexOf(this.params.category);
-    if(i==0) return this.redirect("/getUserInfo");
-    this.redirect("/getCategory/"+categoryNames[i-1]);
+    if (i == 0) return this.redirect("/getUserInfo");
+    this.redirect("/getCategory/" + categoryNames[i - 1]);
 };
 
 
@@ -62,6 +61,7 @@ Controllers.back = function *() {
  * @param items 所选项
  */
 Controllers.setCategory = function *() {
+
     var category = this.request.body.category, items = this.request.body.items;
     if (!categories[category]) return yield this.throwCode(1002, category);
     if (_.size(_.uniq(items)) != 3) return yield this.throwCode(1004, items);
@@ -74,7 +74,7 @@ Controllers.setCategory = function *() {
     this.session.items[category] = items;
     var i = categoryNames.indexOf(category);
     if (i !== categoryNames.length - 1) {
-      return this.body = yield this.render({nextCategoty:categoryNames[i + 1]});
+        return this.body = yield this.render({nextCategoty: categoryNames[i + 1]});
     }
     return yield generateResult(this);
 };
@@ -88,20 +88,23 @@ Controllers.getUserInfo = function *() {
     var user = {data: {openid: 123, nickname: "xx"}};
     this.session.openid = user.data.openid;
     this.session.nickname = user.data.nickname;
-    this.body = yield this.render(this.session, "start");
+    this.session.items = {};
+    this.body = yield this.render({}, "start");
 };
 
 
 Controllers.getResult = function *() {
     var id = this.params.id;
     var record = yield Record.findOne({_id: id}).exec();
-    if (!record || !record.result ) return yield this.throwCode(1003);
+    if (!record || !record.result) return yield this.throwCode(1003);
 
-    this.body = yield this.render(results[record.result], "end");;
+    this.body = yield this.render(results[record.result], "end");
+    ;
 };
 
 
 function *generateResult(that) {
+
     var items = that.session.items;
     var openid = that.session.openid;
     var nickname = that.session.nickname;
@@ -109,6 +112,7 @@ function *generateResult(that) {
     //var openid = "##$$$";
     //var nickname = "xx";
     //cacluate the result
+
     var result = {};
     _.forEach(items, function (v, k) {
         _(v).forEach(function (n) {
@@ -154,32 +158,30 @@ function *generateResult(that) {
         }
     });
 
-    function getSortAndAdd(arr){
-        if(arr[0]>arr[1]){
-            return parseInt(arr[1].toString()+arr[0].toString());
+    function getSortAndAdd(arr) {
+        if (arr[0] > arr[1]) {
+            return parseInt(arr[1].toString() + arr[0].toString());
         }
-         return parseInt(arr[0].toString()+arr[1].toString());
+        return parseInt(arr[0].toString() + arr[1].toString());
     }
+
     var last;
     if (lastResult.length == 0) {
-       last=10;
+        last = 10;
     }
-    if (lastResult.length == 2){
+    if (lastResult.length == 2) {
         last = getSortAndAdd(lastResult);
     }
-    if(lastResult.length==1 ||!results[last]) last = lastResult[0];
+    if (lastResult.length == 1 || !results[last]) last = lastResult[0];
     var record = new Record();
     record.openid = openid;
     record.wechatName = nickname;
     record.result = last;
     var r = yield record.save();
     delete that.session.items;
-    that.body = yield that.render({result:r._id});
+    that.body = yield that.render({result: r._id});
 
 };
-
-
-
 
 
 module.exports = Controllers;
