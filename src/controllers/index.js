@@ -31,7 +31,7 @@ Controllers.index = function *() {
 
 Controllers.home = function *() {
 
-    this.body = this.session;
+    this.redirect(url);
 };
 
 
@@ -82,14 +82,15 @@ Controllers.setCategory = function *() {
 
 
 Controllers.getUserInfo = function *() {
-    //var param = querystring.parse(this.request.url.split('?')[1]);
-    //var accessReq = yield client.getAccessToken(param.code);
-    //var user = yield client.getUser(accessReq.data.openid);
-    var user = {data: {openid: 123, nickname: "xx"}};
+    var param = querystring.parse(this.request.url.split('?')[1]);
+    var accessReq = yield client.getAccessToken(param.code);
+    var user = yield client.getUser(accessReq.data.openid);
+    //var user = {data: {openid: 123, nickname: "xx", headimgurl:"/images/role_05.jpg"}};
     this.session.openid = user.data.openid;
     this.session.nickname = user.data.nickname;
+    this.session.headimgurl = user.data.headimgurl;
     this.session.items = {};
-    this.body = yield this.render({}, "start");
+    this.body = yield this.render(user.data, "start");
 };
 
 
@@ -97,9 +98,8 @@ Controllers.getResult = function *() {
     var id = this.params.id;
     var record = yield Record.findOne({_id: id}).exec();
     if (!record || !record.result) return yield this.throwCode(1003);
-
-    this.body = yield this.render(results[record.result], "end");
-    ;
+    var opt = {nickname:record.wechatName, openid:record.openid, selfOpenId:this.session.openid ||""};
+    this.body = yield this.render(_.merge(opt, results[record.result]), "end");
 };
 
 
