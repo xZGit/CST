@@ -90,9 +90,9 @@ $("#bt li img").click(function(e) {
 				 cImg =  $("#showt").children("img").attr("src");
 				 dImg =  $("#showh").children("img").attr("src");
 				if (c == ""&&bImg!=a&&cImg!=a&&dImg!=a) {
-					$("#showt").html("<img src='" + a + "' height='150' alt=''>")
+					$("#showt").html("<img id='" + id + "' src='" + a + "' height='150' alt=''>")
 				}else if(b==""&&bImg!=a&&cImg!=a&&dImg!=a){
-					$("#showo").html("<img src='" + a + "' height='150' alt=''>")
+					$("#showo").html("<img id='" + id + "' src='" + a + "' height='150' alt=''>")
 				}else{
 					selects.remove(id);
 				}
