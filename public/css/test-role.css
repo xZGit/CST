@@ -2,12 +2,12 @@
 * @Author: Administrator
 * @Date:   2015-06-12 11:13:59
 * @Last Modified by:   Administrator
-* @Last Modified time: 2015-06-23 09:53:06
+* @Last Modified time: 2015-06-26 10:29:16
 */
 *{
 	margin: 0;
 	padding:0;
-	font-family: "微软雅黑";
+	font-family: "Heiti SC, Helvetica Neue, DroidSans";
 }
 .app .style{
 	width: 100%;
@@ -36,6 +36,7 @@
 	width: 81%;
 	height: 93px;
 	margin:auto;
+	position: relative;
 }
 .app .style .pin .show img{
 	width: 100%;
@@ -44,29 +45,30 @@
 .app .style .pin li{
 	width: 60px;
 	height: 60px;
-  overflow: hidden;
+
 	list-style: none;
-	float: left;
-	margin:5% auto 0 10%;
-	text-align: center;
-	font-size: 0.5em;
-	color:#fff;
-	line-height: 45px;
+margin-top: 5%;
 }
 .app .style .pin li:nth-of-type(1){
 	background: url(../images/frame_role_no1.png);
 	-webkit-mask-image: url(../images/frame_role_no1.png);
 	background-size: 100% 100%;
+	float: left;
 }
 .app .style .pin li:nth-of-type(2){
 	background: url(../images/frame_role_no2.png);
 	-webkit-mask-image: url(../images/frame_role_no2.png);
 	background-size: 100% 100%;
+	position: absolute;
+	  left: 50%;
+	  top: 0;
+	  margin-left: -30px;
 }
 .app .style .pin li:nth-of-type(3){
 	background: url(../images/frame_role_no3.png);
 	-webkit-mask-image: url(../images/frame_role_no3.png);
 	background-size: 100% 100%;
+	float: right;
 }
 .app{
 	width: 100%;
@@ -74,19 +76,18 @@
 	background: #FFF8E6;
 	overflow: hidden;
 }
-.app ul{
+.app #bt{
 	width: 86%;
 	height: 100%;
 	margin:32px auto;
 	overflow: hidden;
 }
-.app ul li{
+.app #bt li{
 	width:20%;
 	height: 60px;
 	list-style: none;
 	float: left;
-	margin-left: 3.1%;
-	margin-bottom: 23%;
+	margin: 1% 2% 15%;
 	text-align: center;
 	line-height: 15px;
 	
