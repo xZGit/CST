@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 
-{% block title %}{{title}}{% endblock %}
+{% block title %}原来你是这样的人{% endblock %}
 
 {% block head %}
 {% parent %}
@@ -15,6 +15,7 @@
     	<section>
     		<div class="result">
     			<p>原来{% if openid == selfOpenId %}你{% else %}{{nickname}}{% endif %}是这样的人：{{name}}</p>
+                <p>{{title}}</p>
     			<p>{{description}}</p>
     			<p><img src="{{imgUrl}}" alt=""></p>
     			<p>点击页面右上角将结果分享到朋友圈~↑</p>
