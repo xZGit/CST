@@ -52,5 +52,20 @@
 			 	</div>
 
 
+<script type="text/javascript" >
+
+
+	$(document).ready(function(){
+		var select="{{select}}";
+		var s =select.split(",");
+		for(var i=0; i<s.length; i++){
+			var id="#"+s[i];
+			$(id).trigger("click");
+		}
+
+	});
+
+</script>
+
 
 		{% endblock %}

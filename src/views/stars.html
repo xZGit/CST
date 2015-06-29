@@ -50,5 +50,20 @@
     		       <a ><li class="hou"><img src="/images/arrow_go.png"  alt=""><p>提交</p></li></a>
     		</ul>
     	</div>
+<script type="text/javascript" >
+
+
+	$(document).ready(function(){
+		var select="{{select}}";
+		var s =select.split(",");
+		for(var i=0; i<s.length; i++){
+			var id="#"+s[i];
+			$(id).trigger("click");
+		}
+
+	});
+
+</script>
+
 
 {% endblock %}

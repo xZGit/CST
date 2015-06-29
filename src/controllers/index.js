@@ -41,6 +41,7 @@ Controllers.getCategory = function *() {
     }
     this.body = yield this.render({
         category: this.params.category,
+        select: this.session.items[this.params.category] || []
         //items: categories[this.params.category]
     }, this.params.category);
 };
@@ -181,7 +182,7 @@ function *generateResult(that) {
     record.wechatName = nickname;
     record.result = last;
     var r = yield record.save();
-    //delete that.session.items;
+    delete that.session.items;
     that.body = yield that.render({result: r._id});
 
 };
