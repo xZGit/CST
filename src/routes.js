@@ -17,7 +17,7 @@ module.exports = function (app) {
     };
 
 
-    app.get("/", controller.getUserInfo);
+    app.get("/", controller.home);
 
     app.get("/home", controller.home);
 
