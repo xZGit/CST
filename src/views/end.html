@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 
-{% block title %}原来你是这样的人{% endblock %}
+{% block title %}原来你是这样的人！{% endblock %}
 
 {% block head %}
 {% parent %}
@@ -19,6 +19,7 @@
     			<p>{{description}}</p>
     			<p><img src="{{imgUrl}}" alt=""></p>
     			<p>点击页面右上角将结果分享到朋友圈~↑</p>
+				<a href="/"><p style="background:#FFB73A;color:#fff;font-size:1em;">{% if openid == selfOpenId %}再测一次{% else %}我也要测试{% endif %}</p></a>
     		</div>
     	</section>
     	<div class="link">

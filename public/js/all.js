@@ -141,7 +141,7 @@ $(".hou").click(function(e) {
 		}, 'json');
 
 	} else {
-		alert("请选择三项！")
+		alert("请选择三个选项。")
 	}
 });
 
