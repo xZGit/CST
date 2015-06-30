@@ -1,7 +1,7 @@
 "use strict";
-// $(".style").pin({
-// 	containerSelector: ".app"
-// });
+ $(".style").pin({
+ 	containerSelector: ".app"
+ });
 
 
 Array.prototype.indexOf = function(val) {
@@ -68,7 +68,6 @@ $("#showh").click(function(e) {
 	}
 });
 $("#bt li img").click(function(e) {
-	//$(this).unbind("click");
 	var l=selects.length;
 	if (l < 3) {
 		var a = e.target.src;
