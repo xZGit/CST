@@ -39,6 +39,7 @@ Controllers.getCategory = function *() {
     if (!categories[this.params.category]) {
         return yield this.throwCode(1002, this.params.category);
     }
+    this.session.items=this.session.items ||{};
     this.body = yield this.render({
         category: this.params.category,
         select: this.session.items[this.params.category] || []
@@ -91,8 +92,8 @@ Controllers.getUserInfo = function *() {
         this.session.openid = user.data.openid;
         this.session.nickname = user.data.nickname;
         this.session.headimgurl = user.data.headimgurl;
-        this.session.items = {};
     }
+    this.session.items = {};
     this.body = yield this.render(this.session, "start");
 };
 
