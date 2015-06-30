@@ -148,8 +148,6 @@
 	margin:auto;
 	background: #fff;
 	opacity: 0.96;
-	position: fixed;
-	top:0;
 }
 .app .style p:nth-of-type(1){
 	width: 100%;
@@ -214,7 +212,7 @@
 .app #bt{
 	width: 96%;
 	height: 100%;
-	margin:160px auto 0;
+	margin:32px auto;
 	overflow: hidden;
 }
 .app #bt li{

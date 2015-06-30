@@ -19,7 +19,7 @@ module.exports = function (app) {
 
     app.get("/", controller.home);
 
-    app.get("/home", controller.home);
+    app.get("/index", controller.index);
 
     app.get("/getCategory/:category", controller.getCategory);
 

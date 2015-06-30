@@ -1,7 +1,7 @@
 "use strict";
- //$(".style").pin({
- //	containerSelector: ".app"
- //});
+$(".style").pin({
+	containerSelector: ".app"
+});
 
 
 Array.prototype.indexOf = function(val) {
