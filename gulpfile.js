@@ -14,8 +14,8 @@ var cache = require('gulp-cache');
 // Concatenate & Minify JS
 gulp.task('scripts', function() {
     return gulp.src('public/js/*.js')
-        .pipe(concat('main.js'))
-        .pipe(rename({suffix: '.min'}))
+        //.pipe(concat('main.js'))
+        //.pipe(rename({suffix: '.min'}))
         .pipe(uglify())
         .pipe(gulp.dest('build/js'));
 });
