@@ -2,7 +2,7 @@
 * @Author: Administrator
 * @Date:   2015-06-12 11:13:59
 * @Last Modified by:   Administrator
-* @Last Modified time: 2015-06-30 14:56:08
+* @Last Modified time: 2015-06-30 16:24:55
 */
 *{
 	margin: 0;
@@ -90,7 +90,6 @@ margin-top: 5%;
 	margin: 1% 2% 15%;
 	text-align: center;
 	line-height: 15px;
-	
 }
 .app .pin li img{
 	width: 100%;
@@ -111,7 +110,6 @@ margin-top: 5%;
 	width: 100%;
 	height: 80px;
 	background: #fff;
-
 }
 .footer ul{
 	width: 80%;
@@ -133,7 +131,6 @@ margin-top: 5%;
 .footer ul .qian img{
 	float: left;
 	padding: 12px 17px;
-
 	max-width: 7%;
 }
 .footer ul .hou img{
@@ -153,5 +150,5 @@ margin-top: 5%;
 	font-size: 1em;
 }
 .footer ul p{
-margin-left: 29px;
+	margin-left: 29px;
 }

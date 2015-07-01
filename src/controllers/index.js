@@ -189,6 +189,7 @@ function *generateResult(that) {
     record.openid = openid;
     record.wechatName = nickname;
     record.result = last;
+    record.items=that.session.items;
     var r = yield record.save();
     delete that.session.items;
     that.body = yield that.render({result: r._id});

@@ -14,6 +14,7 @@ var RecordSchema = new Schema({
     wechatName:{ type: String },
     openid: { type: String},
     result: {type: Number},
+    items: {type:Object},
     updated: { type: Date, default: Date.now },
 });
 
